@@ -1,0 +1,133 @@
+---
+title: "Is Conscious Awareness A Prerequisite to Sense of Agency?"
+shorttitle: "Awareness and Agency"
+author:
+  - name: Yimeng (Amy) CHENG
+    corresponding: true
+    orcid: 0009-0007-1238-3749
+    email: yimengcheng@uchicago.edu
+    affiliations:
+      - name: University of Chicago
+        department: Department of Psychology
+        address: 5801 S Ellis Ave
+        city: Chicago
+        region: IL
+        country: USA
+        postal-code: 60615
+author-note:
+  status-changes: 
+    affiliation-change: ~
+    deceased: ~
+  disclosures:
+    study-registration: ~
+    data-sharing: ~
+    related-report: ~
+    conflict-of-interest: "The authors declare no conflict of interest."
+    financial-support: ~
+    gratitude: ~
+    authorship-agreements: ~
+abstract: "This document is a template."
+keywords: ["Consciousness", "Sense of Agency", "Awareness", "Cognition", "CFS","Intentional Binding"]
+bibliography: bibliography.bib
+csl: apa.csl
+format:
+  apaquarto-pdf:
+    documentmode: man
+    keep-tex: true
+    toc: true
+  apaquarto-docx: 
+    toc: true
+  apaquarto-html:
+    toc: true
+    code-fold: true
+---
+
+
+# Introduction
+
+What exactly is the relationship between self and consciousness? Are they developments that proceed in parallel, or do they follow a specific sequence? Or, could it be that both are merely illusions crafted by the human brain? Philosophers incline to hold the illusionist view, which argues that self-awareness is no more than a mental construction—an experience constructed as humans try to make sense of the world and develop a concept of self (Metzinger, 2004). According to this view, the self is a product of consciousness, a cognitive tool that serves to help us interpret our surroundings. But with recent advances in neuroscience, this functionalist perspective has encountered challenges, especially regarding the question of whether self-experience might have a genuine neural basis (Seth & Tsakiris, 2018; Dehaene, 2014; Tononi et al., 2016).
+Neuroscientific research has suggested that self-experience may not be simply a construct of consciousness, but rather something embedded in specific neural activity (Blanke & Metzinger, 2009). This development has led scholars to reconsider the relationship between self and consciousness, as well as their potential evolutionary paths. In response, two main perspectives have emerged: illusionist theory and independence theory. Illusion theory maintains that the self is merely a conceptual framework that humans created to understand the world; while it may be supported by certain neural mechanisms, these mechanisms are insufficient to provide a solid, physical basis for the self (Seth, 2021; Wegner & Wheatley, 1999). On the other hand, independence theory suggests that the sense of self can operate even without conscious awareness, functioning as a fundamental biological process rather than an extension of consciousness (Deacon & García-Valdecasas, 2023).
+To explore these views, a range of experimental and theoretical studies were conducted. Libet (1985)’s readiness potential study stands as a foundational example in support of illusion theory. Libet’s work revealed that the brain initiates a readiness potential—a neural precursor to action—before an individual consciously decides to act (Libet, 1985). This finding opened the door to debates about free will and self-attribution, reinforcing the idea that the self may simply be a retrospective attribution. Nevertheless, Libet’s study is still in debate, especially regarding whether neural activity alone represents genuine self-experience and whether unconscious processes of self-attribution might exist (Neafsey, 2021; Moore et al., 2010).
+Wegner and Wheatley (1999)’s Illusion of Thought-Action theory further strengthens the illusionist stance. They proposed that the feeling of control over one’s actions often comes as a retrospective attribution, largely influenced by external cues and expectations (Wegner & Wheatley, 1999). 
+In contrast, research supporting independence theory explored the continuity of self-experience across conscious and unconscious states. Tsakiris and Haggard (2005)’s rubber hand illusion experiment demonstrated how self-attribution can be both flexible and automatic. This effect highlights how self-experience and bodily perception interact, suggesting that self-awareness might not rely entirely on conscious construction but could have a deeper neural basis, potentially independent of conscious oversight.
+To further illustrate the underlying assumptions between the Illusion Theory and Independence Theory, think about an experience where you are absent-mindedly cutting vegetables and accidentally cut your finger. Seeing the cut, you immediately feel ‘I caused this,’ even though you may not have been consciously aware of when it happened. Illusion theory assumes that consciousness precedes the self, hence would interpret this as a post-hoc attribution created by consciousness, while independence theory suggests that, even without being conscious of the entire process, your body’s underlying mechanisms would automatically attribute the action to self.
+The implications behind these differing explanations are worth noting. If the self is merely a construct of consciousness, then mental health conditions like dissociative identity disorder or post-traumatic stress disorder (PTSD) could be seen as misconstructions by consciousness, where the focus of treatment would rely on building a healthier self-concept to help patients integrate their sense of self (Gallagher, 2000). However, if the self can exist at an unconscious level, then it may be that deeper, automatic mechanisms of self-attribution are at work in such disorders (Gallagher, 2000).
+Literature Gap and Research Question
+While previous research has provided in-depth insights into the relationship between self and consciousness, studies directly investigating whether the sense of self can exist without conscious awareness is lacking. One promising effect for investigating this topic is Intentional Binding (IB; Haggard et al., 2002; Ruess et al., 2018), which occurs when people perceive the time interval between their action and its outcome as shorter, reflecting a sense of agency or causation. For instance, if a person presses a button and a circle appears after 0.5 seconds, they may feel their action caused the circle to appear instantly, with no time gap. When people feel agency, they tend to perceive this interval as shorter. Utilizing this effect, we aim to investigate whether participants can experience a sense of agency (SoA)—indicated by a perceived shortening of time between action and outcome (intentional binding)—when the outcome of their action is masked from conscious awareness?
+
+# Hypotheses
+
+## Hypothesis 1: Positive Control
+
+Hypothesis 1 serves as the foundational hypothesis, verifying that intentional binding can reliably occur under conscious conditions:
+
+If, in the unmasked operant condition (where participants can consciously see the target stimulus), participants perceive their button press time as closer to the outcome time compared to the unmasked baseline condition (where no target stimulus appears), this would confirm that the experimental design successfully elicits the intentional binding effect, indicating a sense of agency when the outcome is consciously perceived.
+
+*Note*: If Hypothesis 1 is not supported, the results from Hypothesis 2 would be inconclusive, as we would lack evidence in the design’s ability to measure SoA.
+
+## Hypothesis 2: Unconscious Conditions
+
+If in the masked operant condition (where the target is suppressed from awareness), participants still perceive a time shortening, then this indicates that SoA occurs even without conscious perception. 
+
+## Hypothesis 3: Hypothesis on Enhanced Agency with Conscious Awareness
+
+This hypothesis aims to test whether consciousness enhances SoA. If participants’ perceived time shift in the unmasked operant condition is greater than in the masked operant condition, then this suggests that conscious awareness strengthens SoA. 
+
+# Method
+
+## Design
+
+This cross-sectional study uses Continuous Flash Suppression (CFS; Pournaghdali & Schwartz, 2020), a technique to mask visual stimuli from conscious awareness, to examine whether people can feel a sense of agency without consciously seeing an outcome.
+
+## Ethical Approval
+
+The Social and Behavioral Sciences Institutional Review Board at the University of Chicago has approved this study (IRB23-1353). Informed consent will be obtained from all participants before the experiment, and they will be informed of their right to withdraw at any time. Participants will receive 1.5 course credits for participation.
+
+## Participants
+
+Eighty undergraduate University of Chicago students with normal color vision will be recruited to allow detection of medium effect sizes with a power of 0.80 assuming an effect size of 𝑑 = 0.5 and a significance level of 0.01. Participants will be asked about their age, biological sex and handedness. 
+
+## Procedure
+
+The experiment comprises five within-subject blocks, as follows:
+
+**1.	Calibration Block:**
+The purpose of this block is to determine the visual contrast threshold for each participant to ensure the target stimulus is effectively suppressed from conscious awareness. Participants will be required to wear red-blue anaglyph glasses. The left eye sees rapidly changing red-colored masks (10 Hz), and the right eye sees a low-contrast blue circle. In 100 trials, a blue circle appears in a random corner of the masked area between 0.25 and 1.75 seconds after the mask onset. Participants indicate which side of the screen they think the blue circle appeared on.
+
+**2.	Baseline-Masked Block:**
+The CFS masks are presented in the middle of a rotating on-screen clock, with participants still wearing red-blue glasses. Participants will be required to press the space bar at a moment of their choosing, stopping the CFS mask 1-2 seconds later. The clock stops, and after a delay, the clock hand reappears at a random position. Participants then adjust the clock hand to where they believe it was at the time of their button press.
+For additional check, participants will be asked after each trial if they saw a blue circle; this serves to confirm the effectiveness of the CFS mask in suppressing conscious perception of the target stimulus.
+
+**3.	Operant-Masked Block:**
+The set up is similar to the baseline-masked block, but with an added target stimulus. After participants press the space bar, a blue circle (target stimulus) appears in a predetermined corner of the masked area 150 ms after the press, remaining on-screen for 200 ms. Participants then complete the same clock-adjustment task to report their perceived time of the button press.
+As with the baseline-masked block, participants report after each trial whether they saw a blue circle. A few “decoy” trials with a full-contrast circle are randomly added to monitor participants' awareness levels.
+
+**4.	Baseline-Unmasked Block:**
+This condition is identical to the baseline-masked block, except no CFS masking is used. Participants are not expected to see any target stimulus. Participants will be required to press the button at a self-chosen time, the clock stops, and they adjust the clock hand to the perceived time of their button press, as in previous blocks.
+
+**5.	Operant-Unmasked Block:**
+This condition mirrors the operant-masked block but without CFS masking, there fore the blue circle (target stimulus) is clearly visible to participants. 
+
+
+# Results
+
+```{r echo=FALSE, fig.width=6, fig.height=4}
+
+```
+
+# Discussion
+
+## Limitations and Future Directions
+
+## Conclusion
+
+# References
+
+<!-- References will auto-populate in the refs div below -->
+
+::: {#refs}
+:::
+
+# Appendix
+
+# Title for Appendix
