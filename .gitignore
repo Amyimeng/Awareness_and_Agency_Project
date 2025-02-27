@@ -1,6 +1,27 @@
-.Rproj.user
+# Quarto/RStudio
+.Rproj.user/
 .Rhistory
-.Rdata
-.httr-oauth
+.RData
+.Ruserdata
+.quarto/
+.quarto-cache/
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# System
 .DS_Store
-.quarto
+Thumbs.db
+
+# Git
+*.swp
+*.swo
+*~

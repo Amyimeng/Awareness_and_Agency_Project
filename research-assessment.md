@@ -34,7 +34,7 @@ Submission date: 02.26.2025
 
 Submission number (1-4): 1
 
-Project GitHub repository URL: Amyimeng/Awareness_and_Agency_Project
+Project GitHub repository URL: [Amyimeng/Awareness_and_Agency_Project](https://github.com/Amyimeng/Awareness_and_Agency_Project)
 
 Filename of manuscript .qmd: Awareness_and_Agency_Project.qmd
 
@@ -129,7 +129,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     2.  .gitingore comprehensively excludes unnecessary, private, and very large files and are commented appropriately
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
