@@ -49,6 +49,12 @@ editor:
   markdown: 
     wrap: sentence
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE
+)
+```
 
 ```{r library packages, echo=FALSE, results='hide'}
 
@@ -283,6 +289,8 @@ Awareness_and_Agency_Project_data/
 
 ```{r data loading, echo=TRUE, results='hide'}
 
+# To upload to Github, I need to ZIP the file because there are over 100 files.
+unzip("Awareness_and_Agency_Project_data.zip", exdir = "Awareness_and_Agency_Project_data")
 # Set the main data directory
 
 data_dir <- "Awareness_and_Agency_Project_data"
@@ -329,7 +337,7 @@ This approach ensures that the estimation biases analyzed are reflective of unco
 
 #Let's first try with one participant's data
 
-sub.01.masked <-read_tsv("Awareness_and_Agency_Project_data/sub-01/beh/sub-01_task-masked_beh.tsv")
+sub.01.masked <-read_tsv("Awareness_and_Agency_Project_data/Awareness_and_Agency_Project_data/sub-01/beh/sub-01_task-masked_beh.tsv")
 
 ```
 
