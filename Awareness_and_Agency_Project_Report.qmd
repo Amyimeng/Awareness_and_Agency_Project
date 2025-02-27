@@ -16,44 +16,84 @@ author:
         postal-code: 60615
 author-note:
   status-changes: 
-    affiliation-change: ~
-    deceased: ~
+    affiliation-change: null
+    deceased: null
   disclosures:
-    study-registration: ~
-    data-sharing: ~
-    related-report: ~
+    study-registration: null
+    data-sharing: null
+    related-report: null
     conflict-of-interest: "The authors declare no conflict of interest."
-    financial-support: ~
-    gratitude: ~
-    authorship-agreements: ~
-abstract: "This document is a template."
+    financial-support: null
+    gratitude: null
+    authorship-agreements: null
+abstract: "To be done."
 keywords: ["Consciousness", "Sense of Agency", "Awareness", "Cognition", "CFS","Intentional Binding"]
 bibliography: bibliography.bib
 csl: apa.csl
+prefer-html: true
+
 format:
   apaquarto-pdf:
     documentmode: man
     keep-tex: true
     toc: true
-  apaquarto-docx: 
+    latex-engine: xelatex
+    mainfont: "Times New Roman"
+  apaquarto-docx:
     toc: true
   apaquarto-html:
     toc: true
     code-fold: true
+
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
+```{r library packages, echo=FALSE, results='hide'}
+
+library(dplyr)
+library(tidyverse)
+library(readr)
+library(knitr)
+library(kableExtra)
+library(MASS)
+```
 
 # Introduction
 
-What exactly is the relationship between self and consciousness? Are they developments that proceed in parallel, or do they follow a specific sequence? Or, could it be that both are merely illusions crafted by the human brain? Philosophers incline to hold the illusionist view, which argues that self-awareness is no more than a mental construction—an experience constructed as humans try to make sense of the world and develop a concept of self (Metzinger, 2004). According to this view, the self is a product of consciousness, a cognitive tool that serves to help us interpret our surroundings. But with recent advances in neuroscience, this functionalist perspective has encountered challenges, especially regarding the question of whether self-experience might have a genuine neural basis (Seth & Tsakiris, 2018; Dehaene, 2014; Tononi et al., 2016).
-Neuroscientific research has suggested that self-experience may not be simply a construct of consciousness, but rather something embedded in specific neural activity (Blanke & Metzinger, 2009). This development has led scholars to reconsider the relationship between self and consciousness, as well as their potential evolutionary paths. In response, two main perspectives have emerged: illusionist theory and independence theory. Illusion theory maintains that the self is merely a conceptual framework that humans created to understand the world; while it may be supported by certain neural mechanisms, these mechanisms are insufficient to provide a solid, physical basis for the self (Seth, 2021; Wegner & Wheatley, 1999). On the other hand, independence theory suggests that the sense of self can operate even without conscious awareness, functioning as a fundamental biological process rather than an extension of consciousness (Deacon & García-Valdecasas, 2023).
-To explore these views, a range of experimental and theoretical studies were conducted. Libet (1985)’s readiness potential study stands as a foundational example in support of illusion theory. Libet’s work revealed that the brain initiates a readiness potential—a neural precursor to action—before an individual consciously decides to act (Libet, 1985). This finding opened the door to debates about free will and self-attribution, reinforcing the idea that the self may simply be a retrospective attribution. Nevertheless, Libet’s study is still in debate, especially regarding whether neural activity alone represents genuine self-experience and whether unconscious processes of self-attribution might exist (Neafsey, 2021; Moore et al., 2010).
-Wegner and Wheatley (1999)’s Illusion of Thought-Action theory further strengthens the illusionist stance. They proposed that the feeling of control over one’s actions often comes as a retrospective attribution, largely influenced by external cues and expectations (Wegner & Wheatley, 1999). 
-In contrast, research supporting independence theory explored the continuity of self-experience across conscious and unconscious states. Tsakiris and Haggard (2005)’s rubber hand illusion experiment demonstrated how self-attribution can be both flexible and automatic. This effect highlights how self-experience and bodily perception interact, suggesting that self-awareness might not rely entirely on conscious construction but could have a deeper neural basis, potentially independent of conscious oversight.
-To further illustrate the underlying assumptions between the Illusion Theory and Independence Theory, think about an experience where you are absent-mindedly cutting vegetables and accidentally cut your finger. Seeing the cut, you immediately feel ‘I caused this,’ even though you may not have been consciously aware of when it happened. Illusion theory assumes that consciousness precedes the self, hence would interpret this as a post-hoc attribution created by consciousness, while independence theory suggests that, even without being conscious of the entire process, your body’s underlying mechanisms would automatically attribute the action to self.
-The implications behind these differing explanations are worth noting. If the self is merely a construct of consciousness, then mental health conditions like dissociative identity disorder or post-traumatic stress disorder (PTSD) could be seen as misconstructions by consciousness, where the focus of treatment would rely on building a healthier self-concept to help patients integrate their sense of self (Gallagher, 2000). However, if the self can exist at an unconscious level, then it may be that deeper, automatic mechanisms of self-attribution are at work in such disorders (Gallagher, 2000).
-Literature Gap and Research Question
-While previous research has provided in-depth insights into the relationship between self and consciousness, studies directly investigating whether the sense of self can exist without conscious awareness is lacking. One promising effect for investigating this topic is Intentional Binding (IB; Haggard et al., 2002; Ruess et al., 2018), which occurs when people perceive the time interval between their action and its outcome as shorter, reflecting a sense of agency or causation. For instance, if a person presses a button and a circle appears after 0.5 seconds, they may feel their action caused the circle to appear instantly, with no time gap. When people feel agency, they tend to perceive this interval as shorter. Utilizing this effect, we aim to investigate whether participants can experience a sense of agency (SoA)—indicated by a perceived shortening of time between action and outcome (intentional binding)—when the outcome of their action is masked from conscious awareness?
+What exactly is the relationship between self and consciousness?
+Are they developments that proceed in parallel, or do they follow a specific sequence?
+Or, could it be that both are merely illusions crafted by the human brain?
+Philosophers incline to hold the illusionist view, which argues that self-awareness is no more than a mental construction—an experience constructed as humans try to make sense of the world and develop a concept of self (Metzinger, 2004).
+According to this view, the self is a product of consciousness, a cognitive tool that serves to help us interpret our surroundings.
+But with recent advances in neuroscience, this functionalist perspective has encountered challenges, especially regarding the question of whether self-experience might have a genuine neural basis (Seth & Tsakiris, 2018; Dehaene, 2014; Tononi et al., 2016).
+Neuroscientific research has suggested that self-experience may not be simply a construct of consciousness, but rather something embedded in specific neural activity (Blanke & Metzinger, 2009).
+This development has led scholars to reconsider the relationship between self and consciousness, as well as their potential evolutionary paths.
+In response, two main perspectives have emerged: illusionist theory and independence theory.
+Illusion theory maintains that the self is merely a conceptual framework that humans created to understand the world; while it may be supported by certain neural mechanisms, these mechanisms are insufficient to provide a solid, physical basis for the self (Seth, 2021; Wegner & Wheatley, 1999).
+On the other hand, independence theory suggests that the sense of self can operate even without conscious awareness, functioning as a fundamental biological process rather than an extension of consciousness (Deacon & García-Valdecasas, 2023).
+To explore these views, a range of experimental and theoretical studies were conducted.
+Libet (1985)’s readiness potential study stands as a foundational example in support of illusion theory.
+Libet’s work revealed that the brain initiates a readiness potential—a neural precursor to action—before an individual consciously decides to act (Libet, 1985).
+This finding opened the door to debates about free will and self-attribution, reinforcing the idea that the self may simply be a retrospective attribution.
+Nevertheless, Libet’s study is still in debate, especially regarding whether neural activity alone represents genuine self-experience and whether unconscious processes of self-attribution might exist (Neafsey, 2021; Moore et al., 2010).
+Wegner and Wheatley (1999)’s Illusion of Thought-Action theory further strengthens the illusionist stance.
+They proposed that the feeling of control over one’s actions often comes as a retrospective attribution, largely influenced by external cues and expectations (Wegner & Wheatley, 1999).
+In contrast, research supporting independence theory explored the continuity of self-experience across conscious and unconscious states.
+Tsakiris and Haggard (2005)’s rubber hand illusion experiment demonstrated how self-attribution can be both flexible and automatic.
+This effect highlights how self-experience and bodily perception interact, suggesting that self-awareness might not rely entirely on conscious construction but could have a deeper neural basis, potentially independent of conscious oversight.
+To further illustrate the underlying assumptions between the Illusion Theory and Independence Theory, think about an experience where you are absent-mindedly cutting vegetables and accidentally cut your finger.
+Seeing the cut, you immediately feel ‘I caused this,’ even though you may not have been consciously aware of when it happened.
+Illusion theory assumes that consciousness precedes the self, hence would interpret this as a post-hoc attribution created by consciousness, while independence theory suggests that, even without being conscious of the entire process, your body’s underlying mechanisms would automatically attribute the action to self.
+The implications behind these differing explanations are worth noting.
+If the self is merely a construct of consciousness, then mental health conditions like dissociative identity disorder or post-traumatic stress disorder (PTSD) could be seen as misconstructions by consciousness, where the focus of treatment would rely on building a healthier self-concept to help patients integrate their sense of self (Gallagher, 2000).
+However, if the self can exist at an unconscious level, then it may be that deeper, automatic mechanisms of self-attribution are at work in such disorders (Gallagher, 2000).
+Literature Gap and Research Question While previous research has provided in-depth insights into the relationship between self and consciousness, studies directly investigating whether the sense of self can exist without conscious awareness is lacking.
+One promising effect for investigating this topic is Intentional Binding (IB; Haggard et al., 2002; Ruess et al., 2018), which occurs when people perceive the time interval between their action and its outcome as shorter, reflecting a sense of agency or causation.
+For instance, if a person presses a button and a circle appears after 0.5 seconds, they may feel their action caused the circle to appear instantly, with no time gap.
+When people feel agency, they tend to perceive this interval as shorter.
+Utilizing this effect, we aim to investigate whether participants can experience a sense of agency (SoA)—indicated by a perceived shortening of time between action and outcome (intentional binding)—when the outcome of their action is masked from conscious awareness?
 
 # Hypotheses
 
@@ -67,11 +107,12 @@ If, in the unmasked operant condition (where participants can consciously see th
 
 ## Hypothesis 2: Unconscious Conditions
 
-If in the masked operant condition (where the target is suppressed from awareness), participants still perceive a time shortening, then this indicates that SoA occurs even without conscious perception. 
+If in the masked operant condition (where the target is suppressed from awareness), participants still perceive a time shortening, then this indicates that SoA occurs even without conscious perception.
 
 ## Hypothesis 3: Hypothesis on Enhanced Agency with Conscious Awareness
 
-This hypothesis aims to test whether consciousness enhances SoA. If participants’ perceived time shift in the unmasked operant condition is greater than in the masked operant condition, then this suggests that conscious awareness strengthens SoA. 
+This hypothesis aims to test whether consciousness enhances SoA.
+If participants’ perceived time shift in the unmasked operant condition is greater than in the masked operant condition, then this suggests that conscious awareness strengthens SoA.
 
 # Method
 
@@ -81,39 +122,435 @@ This cross-sectional study uses Continuous Flash Suppression (CFS; Pournaghdali 
 
 ## Ethical Approval
 
-The Social and Behavioral Sciences Institutional Review Board at the University of Chicago has approved this study (IRB23-1353). Informed consent will be obtained from all participants before the experiment, and they will be informed of their right to withdraw at any time. Participants will receive 1.5 course credits for participation.
+The Social and Behavioral Sciences Institutional Review Board at the University of Chicago has approved this study (IRB23-1353).
+Informed consent will be obtained from all participants before the experiment, and they will be informed of their right to withdraw at any time.
+Participants will receive 1.5 course credits for participation.
 
 ## Participants
 
-Eighty undergraduate University of Chicago students with normal color vision will be recruited to allow detection of medium effect sizes with a power of 0.80 assuming an effect size of 𝑑 = 0.5 and a significance level of 0.01. Participants will be asked about their age, biological sex and handedness. 
+Eighty undergraduate University of Chicago students with normal color vision will be recruited to allow detection of medium effect sizes with a power of 0.80 assuming an effect size of 𝑑 = 0.5 and a significance level of 0.01.
+Participants will be asked about their age, biological sex and handedness.
 
 ## Procedure
 
 The experiment comprises five within-subject blocks, as follows:
 
-**1.	Calibration Block:**
-The purpose of this block is to determine the visual contrast threshold for each participant to ensure the target stimulus is effectively suppressed from conscious awareness. Participants will be required to wear red-blue anaglyph glasses. The left eye sees rapidly changing red-colored masks (10 Hz), and the right eye sees a low-contrast blue circle. In 100 trials, a blue circle appears in a random corner of the masked area between 0.25 and 1.75 seconds after the mask onset. Participants indicate which side of the screen they think the blue circle appeared on.
+**1. Calibration Block:** The purpose of this block is to determine the visual contrast threshold for each participant to ensure the target stimulus is effectively suppressed from conscious awareness.
+Participants will be required to wear red-blue anaglyph glasses.
+The left eye sees rapidly changing red-colored masks (10 Hz), and the right eye sees a low-contrast blue circle.
+In 100 trials, a blue circle appears in a random corner of the masked area between 0.25 and 1.75 seconds after the mask onset.
+Participants indicate which side of the screen they think the blue circle appeared on.
 
-**2.	Baseline-Masked Block:**
-The CFS masks are presented in the middle of a rotating on-screen clock, with participants still wearing red-blue glasses. Participants will be required to press the space bar at a moment of their choosing, stopping the CFS mask 1-2 seconds later. The clock stops, and after a delay, the clock hand reappears at a random position. Participants then adjust the clock hand to where they believe it was at the time of their button press.
+**2. Baseline-Masked Block:** The CFS masks are presented in the middle of a rotating on-screen clock, with participants still wearing red-blue glasses.
+Participants will be required to press the space bar at a moment of their choosing, stopping the CFS mask 1-2 seconds later.
+The clock stops, and after a delay, the clock hand reappears at a random position.
+Participants then adjust the clock hand to where they believe it was at the time of their button press.
 For additional check, participants will be asked after each trial if they saw a blue circle; this serves to confirm the effectiveness of the CFS mask in suppressing conscious perception of the target stimulus.
 
-**3.	Operant-Masked Block:**
-The set up is similar to the baseline-masked block, but with an added target stimulus. After participants press the space bar, a blue circle (target stimulus) appears in a predetermined corner of the masked area 150 ms after the press, remaining on-screen for 200 ms. Participants then complete the same clock-adjustment task to report their perceived time of the button press.
-As with the baseline-masked block, participants report after each trial whether they saw a blue circle. A few “decoy” trials with a full-contrast circle are randomly added to monitor participants' awareness levels.
+**3. Operant-Masked Block:** The set up is similar to the baseline-masked block, but with an added target stimulus.
+After participants press the space bar, a blue circle (target stimulus) appears in a predetermined corner of the masked area 150 ms after the press, remaining on-screen for 200 ms. Participants then complete the same clock-adjustment task to report their perceived time of the button press.
+As with the baseline-masked block, participants report after each trial whether they saw a blue circle.
+A few “decoy” trials with a full-contrast circle are randomly added to monitor participants' awareness levels.
 
-**4.	Baseline-Unmasked Block:**
-This condition is identical to the baseline-masked block, except no CFS masking is used. Participants are not expected to see any target stimulus. Participants will be required to press the button at a self-chosen time, the clock stops, and they adjust the clock hand to the perceived time of their button press, as in previous blocks.
+**4. Baseline-Unmasked Block:** This condition is identical to the baseline-masked block, except no CFS masking is used.
+Participants are not expected to see any target stimulus.
+Participants will be required to press the button at a self-chosen time, the clock stops, and they adjust the clock hand to the perceived time of their button press, as in previous blocks.
 
-**5.	Operant-Unmasked Block:**
-This condition mirrors the operant-masked block but without CFS masking, there fore the blue circle (target stimulus) is clearly visible to participants. 
+**5. Operant-Unmasked Block:** This condition mirrors the operant-masked block but without CFS masking, there fore the blue circle (target stimulus) is clearly visible to participants.
 
+## 2x2 Design Table
+
+```{r experimental-design, echo=FALSE}
+
+table_data <- data.frame(
+  Condition = c("2. Baseline-Masked", "3. Operant-Masked", 
+                "4. Baseline-Unmasked", "5. Operant-Unmasked"),
+  `Blue Circle Appear` = c("No", "Yes", "No", "Yes"),
+  `CFS Masking` = c("Yes", "Yes", "No", "No")
+)
+
+kable(table_data, format = "latex", caption = "Table 1. Experimental Design: 2 × 2", 
+      booktabs = TRUE, align = "c") %>%
+  kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+  row_spec(0, bold = TRUE, background = "#B33A3A", color = "white") %>%
+  column_spec(1, bold = TRUE, background = "#F7D1D1") %>%
+  column_spec(2, background = "#F7D1D1") %>%
+  column_spec(3, background = "#F7D1D1")
+
+```
+
+## Experimental Design and Corresponding Hypotheses
+
+```{r testing-hypotheses, echo=FALSE}
+
+table_data <- data.frame(
+  Hypotheses = c("H1: Positive Control", "H2: Unconscious SoA", "H3: Enhanced SoA"),
+  `Conditions Compared` = c("4 vs. 5", "2 vs. 3", "3 vs. 5"),
+  Question = c("Does binding occur when the outcome is visible?",
+               "Can binding occur without conscious awareness?",
+               "Does conscious awareness enhance binding?")
+)
+
+kable(table_data, format = "latex", caption = "Table 2. Testing Hypotheses", 
+      booktabs = TRUE, align = "c") %>%
+  kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+  row_spec(0, bold = TRUE) %>%
+  column_spec(1, bold = TRUE)
+
+
+```
+
+# Data Analysis Plan (for hypothesis 2) 
+
+*Note:* So far we have only collected data from 65 participants.
+Therefore, only these participants' data will be analysed in this report.
+
+The primary objective of this data analysis is to investigate whether operant stimuli (in this case, the appearance of a blue circle) influence temporal estimation biases under masked and unmasked conditions.
+Specifically, we aim to determine if these biases are modulated by unconscious processing, ensuring that conscious awareness of the stimulus does not confound the results.
+To achieve this, we implement a rigorous screening procedure to exclude trials where participants reported awareness of the operant stimulus.
+
+The data analysis is structured as follows:
+
+
+**Screening Procedure using Fisher's Exact Test:**
+
+To ensure that estimation biases are due to unconscious processing, we conduct Fisher's Exact Test to compare awareness rates between operant-masked and baseline-masked conditions for each participant.
+If a participant reports significantly more awareness in the operant-masked condition than in the baseline-masked condition, their masked trials are excluded from further analysis.
+
+**Data Preprocessing and Filtering:**
+
+Exclude practice and catch trials that could introduce learning effects or noise.
+Remove trials where participants reported awareness of the operant stimulus, ensuring that only unconscious processing is measured.
+Calculation of Huber Mean and Paired Differences (Δ_masked):
+
+Huber Mean is calculated for each participant's temporal estimation bias within both baseline-masked and operant-masked conditions.
+This robust measure minimizes the influence of outliers, providing a more accurate central tendency estimate than the arithmetic mean.
+Paired differences (Δ_masked) are computed to assess the influence of operant stimuli on estimation biases.
+
+**Paired t-test and Effect Size Calculation (Cohen's d):**
+
+We perform paired t-tests on the paired differences (Δ_masked) to test if they significantly differ from zero.
+Cohen's d is calculated to determine the effect size, providing insight into the practical significance of the operant stimulus's influence on temporal estimation.
+
+**Bootstrapped Confidence Intervals and Visualization:**
+
+Bootstrapping (5,000 samples) is conducted to calculate 95% confidence intervals for paired differences and Cohen's d.
+The DABEST package is used for estimation statistics and visualization, enabling a more comprehensive interpretation of the data.
+
+By systematically controlling for conscious awareness and utilizing robust statistical methods, this analysis aims to provide compelling evidence on whether operant stimuli can implicitly modulate temporal estimation biases.
+This approach enhances the validity and reliability of the findings, contributing to our understanding of the relationship between unconscious processing and temporal perception.
+
+# Step-by-Step Analysis
+
+The analysis workflow involves the following steps:
+
+Step 1: Automated Data Loading
+
+Step 2: Screening Procedure using Fisher's Exact Test
+
+Step 3: Data Preprocessing and Filtering
+
+Step 4: Calculation of Huber Mean and Paired Differences (Δ_masked)
+
+Step 5: Paired t-test and Effect Size Calculation (Cohen's d)
+
+Step 6: Bootstrapped Confidence Intervals and Visualization
+
+## Step 1: Automated Data Loading
+
+This step involves automatically loading all participant data stored in subfolders under the Awareness_and_Agency_Project_data directory.
+Each participant's data is organized as follows:
+
+```         
+
+Awareness_and_Agency_Project_data/
+├── sub-01/
+│   └── beh/
+│       ├── sub-01_task-discrimination_beh.tsv
+│       ├── sub-01_task-masked_beh.tsv
+│       └── sub-01_task-unmasked_beh.tsv
+├── sub-02/
+│   └── beh/
+│       ├── sub-02_task-discrimination_beh.tsv
+│       ├── sub-02_task-masked_beh.tsv
+│       └── sub-02_task-unmasked_beh.tsv
+└── sub-XX/
+    └── beh/
+│       ├── sub-xx_task-discrimination_beh.tsv
+        ├── sub-XX_task-masked_beh.tsv
+        └── sub-XX_task-unmasked_beh.tsv
+```
+
+```{r data loading, echo=TRUE, results='hide'}
+
+# Set the main data directory
+
+data_dir <- "Awareness_and_Agency_Project_data"
+
+# Create a file list, which automatically find all _beh.tsv files within subfolders
+
+file_list <- list.files(data_dir, pattern = "-masked_beh.tsv$", recursive = TRUE, full.names = TRUE)
+
+# Read all the tsv files into a list of data frames
+
+data_list <- lapply(file_list, read_tsv)
+
+# Extract and assign descriptive names to each data frame, using regular expression to match the original file names
+
+names(data_list) <- gsub(".*/(sub-\\d+)/beh/(sub-\\d+_task-.*).tsv", "\\2", file_list)
+
+
+# Display the structure of all loaded data frames
+
+str(data_list)
+
+```
+
+
+## Step 2: Screening Procedure using Fisher's Exact Test
+
+### Data Screening: Exclusion Criteria
+
+In this study, a screening criterion was implemented to ensure that participants' estimations of event timing were not influenced by conscious awareness of the operant stimulus, which in this experiment was the brief appearance of a blue circle.
+
+Specifically, participants were excluded from further analysis if they reported perceiving the blue circle significantly more often in the Operant-Masked condition than in the Baseline-Masked condition.
+
+This criterion was established because the Baseline-Masked condition presented no operant stimuli, whereas the Operant-Masked condition presented the blue circle in a manner intended to remain subliminal.
+
+If a participant's awareness of the blue circle was significantly higher in the Operant-Masked condition, it would indicate that the masking was ineffective for that participant, and thus their temporal estimations could be influenced by conscious perception.
+
+To evaluate this, **Fisher's exact test** was used to compare the frequency of reported perceptions between the two conditions.
+
+If the difference was statistically significant (p \< 0.05), it was concluded that the participant was consciously aware of the blue circle in the Operant-Masked condition, leading to the exclusion of all their trials in the masked conditions from further analysis.
+
+This approach ensures that the estimation biases analyzed are reflective of unconscious processing rather than being confounded by conscious awareness of the operant stimulus.
+
+```{r sub01 data, echo=TRUE, results='hide'}
+
+#Let's first try with one participant's data
+
+sub.01.masked <-read_tsv("Awareness_and_Agency_Project_data/sub-01/beh/sub-01_task-masked_beh.tsv")
+
+```
+
+```{r sub01 fisher, echo=TRUE}
+operant_aware <- sum(sub.01.masked$aware == TRUE & sub.01.masked$operant == TRUE)
+
+operant_unaware <- sum(sub.01.masked$aware == FALSE & sub.01.masked$operant == TRUE)
+
+baseline_aware <- sum(sub.01.masked$aware == TRUE & sub.01.masked$operant == FALSE)
+
+baseline_unaware <- sum(sub.01.masked$aware == FALSE & sub.01.masked$operant == FALSE)
+
+print(operant_aware)
+print(operant_unaware)
+print(baseline_aware)
+print(baseline_unaware)
+
+
+
+```
+We can see that for subject 01, there are:
+`r operant_aware` aware in operant-masked condition;
+`r operant_unaware` unaware in operant-masked condition;
+`r baseline_aware` awarenesses in baseline-masked condition;
+`r baseline_unaware` awarenesses in baseline-masked condition.
+
+Let's then produce a contingency table:
+
+```{r sub.01 contingcy table, echo=TRUE}
+
+contingency_table <- matrix(
+  c(operant_aware, operant_unaware,
+    baseline_aware, baseline_unaware),
+  nrow = 2, 
+  byrow = TRUE
+)
+rownames(contingency_table) <- c("Operant-Masked", "Baseline-Masked")
+colnames(contingency_table) <- c("Aware", "Unaware")
+
+```
+Let's conduct Fisher's Exact Test
+
+```{r fisher sub.01, echo=TRUE}
+fisher_result <- fisher.test(contingency_table, alternative = "greater") #one-tailed
+print(fisher_result)
+
+```
+The results shows that participant 01 has significantly more "aware" in operant-masked condition than in baseline-masked condition, hence this participant should be excluded. 
+
+**Let's then create a function to apply Fisher's Exact Test on all participants:**
+
+```{r all participants fisher, echo=TRUE}
+fisher_test_and_screen <- function(df) {
+  operant_aware <- sum(df$aware == TRUE & df$operant == TRUE)
+  operant_unaware <- sum(df$aware == FALSE & df$operant == TRUE)
+  baseline_aware <- sum(df$aware == TRUE & df$operant == FALSE)
+  baseline_unaware <- sum(df$aware == FALSE & df$operant == FALSE)
+  
+  contingency_table <- matrix(
+    c(operant_aware, operant_unaware,
+      baseline_aware, baseline_unaware),
+    nrow = 2, 
+    byrow = TRUE
+  )
+  
+  fisher_result <- fisher.test(contingency_table, alternative = "greater")
+  
+  p_value <- fisher_result$p.value
+
+  return(p_value > 0.05)
+}
+
+
+filtered_data_list <- data_list[lapply(data_list, fisher_test_and_screen) == TRUE]
+
+length(filtered_data_list)
+
+```
+
+After screening, there are `r length(filtered_data_list)` participants left.
+
+
+## Step 3 Data Preprocessing and Filtering
+
+Define a function to only inclue real trials and exclude catch and practice trials. Also exclude trials where participants report that they are aware of the blue circle. 
+
+```{r data-preparation, echo=TRUE}
+
+preprocess_data <- function(df) {
+  df <- df %>%
+    # Exclude Practice and Catch Trials
+    filter(practice == FALSE, catch == FALSE) %>%
+    # Exclude Trials Where Participants Reported Awareness
+    filter(aware == FALSE)
+  return(df)
+}
+
+# Apply this function to all dataframe
+
+processed_data_list <- lapply(filtered_data_list, preprocess_data)
+
+
+```
+
+## Step 4: Calculation of Huber Mean and Paired Differences (Δ_masked)
+
+We calculate the **Huber Mean** for estimation bias within each condition, which is a robust measure of central tendency that minimizes the impact of outliers.
+
+### 4.1 Huber Mean Calculation
+```{r huber mean, echo=TRUE}
+
+#Create a new condition column for every table to benefit later comparasion
+
+processed_data_list <- lapply(processed_data_list, function(data) {
+  data <- data %>%
+    mutate(
+      condition = case_when(
+        masked == TRUE & operant == TRUE ~ "Operant-Masked",
+        masked == TRUE & operant == FALSE ~ "Baseline-Masked",
+        masked == FALSE & operant == TRUE ~ "Operant-Unmasked",
+        masked == FALSE & operant == FALSE ~ "Baseline-Unmasked"
+      )
+    )
+  return(data)
+})
+
+#Calculate huber mean. Using "if" conditions to deal with 0s.
+calculate_huber <- function(df) {
+  if (!("condition" %in% names(df)) | !("overest_t" %in% names(df))) {
+    stop("Data does not contain required columns.")
+  }
+
+  masked_vals <- df$overest_t[df$condition == "Operant-Masked"]
+  baseline_vals <- df$overest_t[df$condition == "Baseline-Masked"]
+
+  if (length(masked_vals) == 0 || all(is.na(masked_vals)) || mad(masked_vals, na.rm = TRUE) == 0) {
+    huber_masked <- NA
+  } else {
+    huber_masked <- huber(masked_vals)$mu
+  }
+  
+  if (length(baseline_vals) == 0 || all(is.na(baseline_vals)) || mad(baseline_vals, na.rm = TRUE) == 0) {
+    huber_baseline <- NA
+  } else {
+    huber_baseline <- huber(baseline_vals)$mu
+  }
+  df$masked <- huber_masked
+  df$baseline <- huber_baseline
+  return(c(masked = huber_masked, baseline = huber_baseline))
+}
+
+huber_results <- lapply(processed_data_list, calculate_huber)
+
+print(huber_results)
+
+```
+
+### 4.2: Paired Differences (Δ_masked) Calculation
+```{r paired differences, echo=TRUE}
+
+calculate_diff <- function(huber_vals) {
+  delta_masked <- huber_vals["masked"] - huber_vals["baseline"]
+  return(delta_masked)
+}
+
+delta_masked_list <- lapply(huber_results, calculate_diff)
+
+delta_masked <- unlist(delta_masked_list)
+
+print(delta_masked)
+
+```
+
+### Visualization
+```{r huber mean and paired difference viz, echo=TRUE}
+delta_data <- data.frame(delta_masked = delta_masked)
+
+# Histogram
+ggplot(delta_data, aes(x = delta_masked)) +
+  geom_histogram(binwidth = 1, color = "black", fill = "skyblue") +
+  labs(title = "Distribution of Δ_masked", x = "Δ_masked", y = "Count") +
+  theme_minimal()
+
+# Boxplot
+ggplot(delta_data, aes(y = delta_masked)) +
+  geom_boxplot(fill = "orange", color = "black") +
+  labs(title = "Boxplot of Δ_masked", y = "Δ_masked") +
+  theme_minimal()
+
+```
+
+
+## Step 5: Paired t-test and Effect Size Calculation (Cohen's d) **[To be compeleted]**
+
+**Objective:**
+Calculate Paired Differences (Δ_masked):
+
+Δ_masked = Operant-Masked Huber Mean - Baseline-Masked Huber Mean
+
+Measures the effect of intentional action on time estimation bias in the Masked condition.
+
+**Statistical Tests:**
+
+One-tailed Paired t-test:
+Test the hypothesis: Δ_masked > 0 (indicating intentional binding).
+
+**Effect Size Calculation:**
+
+Cohen's d to measure the magnitude of the effect.
+
+```{r t-test and effect size, echo = TRUE}
+
+```
 
 # Results
 
-```{r echo=FALSE, fig.width=6, fig.height=4}
+## Participant Demographics
 
-```
+*I need to manully insert this data because we asked participants to write down on a form as a part of consent.*
+
+*I haven't done this but I will in the final version of the report.*
 
 # Discussion
 
