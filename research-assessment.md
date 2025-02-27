@@ -22,29 +22,44 @@ To complete this assessment:
 
 ## Basic information
 
-Name:
+Name: Yimeng Cheng
 
-CNetID:
+CNetID: 12451066
 
-Section:
+Section: 1
 
-Research project title:
+Research project title: Is Conscious Awareness A Prerequisite to Sense of Agency?
 
-Submission date:
+Submission date: 02.26.2025
 
-Submission number (1-4):
+Submission number (1-4): 1
 
-Project GitHub repository URL:
+Project GitHub repository URL: Amyimeng/Awareness_and_Agency_Project
 
-Filename of manuscript .qmd:
+Filename of manuscript .qmd: Awareness_and_Agency_Project.qmd
 
-Filename of knitted .pdf:
+Filename of knitted .pdf: Awareness_and_Agency_Project.qmd
 
 ## AI Statement
 
 Describe whether and how you used AI/LLMs when completing this project:
 
+Yes. I used ChatGPT for the following functions:\
+1. Asking it how to extract all the tsv files from multiple folders.
+
+2.  Asking it how to calculate Huber Mean and Fisher's exact test.
+
 Optionally (for engagement points) reflect on your use of AI:
+
+I think the fact that AI can provide different ways to implement the same function is very helpful, as it inspires me to think whether there are easier ways to do what I want. For example, for automatic data loading from 65 folders I was thinking using a for-loop to extract data from each folder. However, ChatGPT suggested me to just identify whether these files have common name features (i.e., \_beh.tsv suffix) and starts from there. It also suggests that I can use the 'lapply()' function. This way less computational power is needed (I think）and the coding is actually simpler.
+
+I also learned that to deal with multiple data frames, I do not need to recreate a two-dimensional table and put all data in there. Instead, I can create a list that contains multiple data frames. Essentially, this list is multi-dimensional.
+
+However, I do need to double check whether ChatGPT is correct. For example, I was wondering that if I want to find all files end with "masked_beh" as well as those with "unmasked_beh", what shall I do. I was wondering whether I can just use "masked_beh" — as "unmasked_beh" also include this component— or do I have to include both "masked_beh" and "unmasked_beh" as two different expressions.
+
+GPT suggested that if I just use "pattern = masked_beh.tsv" I'll get both, but if I use "masked_beh.tsv\$" which is a strict string match then I will only get those end with "masked_beh.tsv". But I actually got both "masked" and "unmasked" regardless of whether I added \$ or not.
+
+So I just re-observed the file names and found that I could used "-mased_beh.tsv" — adding a hyphen at the beginning, and it worked.
 
 ## Overall requirements
 
@@ -94,7 +109,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     3.  Does not have duplicate/redundant elements
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -124,7 +139,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     2.  Relies on document revisions rather than manually created new versions
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -139,7 +154,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     2.  Uses more than one function to install/load/require packages (including those used in commented code)
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -149,7 +164,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     2.  Uses multiple operators in data transformation pipelines and/or inline R code
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -161,7 +176,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     3.  Functions are well-documented with comments
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -171,7 +186,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     2.  Uses multiple types of conditional/loop functions (e.g., `if_else()`, `case_when()`, `for`, `while`)
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -183,7 +198,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     3.  Uses only relative paths that run without error when repo is cloned
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -195,7 +210,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     3.  Combines `dplyr` and `tidyr` functions in a data transformation pipeline
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -205,7 +220,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     2.  Uses `stringr` functions in a data transformation pipeline
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -228,7 +243,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     2.  At least one plot is multi-variable
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -236,7 +251,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     1.  Uses at least 2 unique data-mapped `aes()` arguments (e.g., color, shape, size) to group data in a plot in one or multiple plots
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -249,7 +264,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
     5.  If data only includes 1 sensible grouping variable, it may be used for both the faceting and groupin aes.
 
     ```         
-    -   [ ] Objective attempt
+    -   [X] Objective attempt
     -   [ ] Objective met
     -   Grader comments:
     ```
@@ -264,7 +279,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     4.  Uses at least 1 static aesthetic (e.g., color, shape, size) that improves visual clarity without mapping to data
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -278,7 +293,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     -   NOTE: This objective may be met with only numeric or non-numeric summaries if they are sufficiently complex (at Dr. Dowling's discretion)
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -304,7 +319,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     4.  Uses dynamic inline R code to render data-dependent text
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -318,7 +333,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     3.  May use `cite_r()` to cite R and R packages
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -334,7 +349,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     5.  May include references not cited in-text
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -350,7 +365,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     4.  Chunks are distributed throughout the manuscript, sensibly placed near the text they support
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -364,7 +379,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     4.  Organizes setup chunks sensibly
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -378,7 +393,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     -   NOTE: Ideally your table(s) should be produced in APA7 style, but this is not a strict requirement. At a minimum, they should render as formatted tables (not raw output), have readable and correctly formatted text (e.g., column headers should be capitalized and in plain english, not literal variable names), and the table must be dynamically referenced in the text.
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -404,7 +419,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     1.  Includes all necessary metadata, output options, and formatting options necessary to render an APA styled document (or other specified style if appropriate for the project)
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
