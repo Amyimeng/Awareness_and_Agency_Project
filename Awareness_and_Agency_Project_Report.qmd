@@ -28,9 +28,8 @@ author-note:
     authorship-agreements: null
 abstract: "To be done."
 keywords: ["Consciousness", "Sense of Agency", "Awareness", "Cognition", "CFS","Intentional Binding"]
-bibliography: bibliography.bib
-csl: apa.csl
-prefer-html: true
+bibliography: "bibliography.bib"
+csl: "apa.csl"
 
 format:
   apaquarto-pdf:
@@ -48,7 +47,9 @@ format:
 editor: 
   markdown: 
     wrap: sentence
+
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   message = FALSE,
@@ -71,34 +72,47 @@ library(MASS)
 What exactly is the relationship between self and consciousness?
 Are they developments that proceed in parallel, or do they follow a specific sequence?
 Or, could it be that both are merely illusions crafted by the human brain?
-Philosophers incline to hold the illusionist view, which argues that self-awareness is no more than a mental construction—an experience constructed as humans try to make sense of the world and develop a concept of self (Metzinger, 2004).
+
+Philosophers incline to hold the illusionist view, which argues that self-awareness is no more than a mental construction—an experience constructed as humans try to make sense of the world and develop a concept of self [@Metzinger2004].
 According to this view, the self is a product of consciousness, a cognitive tool that serves to help us interpret our surroundings.
-But with recent advances in neuroscience, this functionalist perspective has encountered challenges, especially regarding the question of whether self-experience might have a genuine neural basis (Seth & Tsakiris, 2018; Dehaene, 2014; Tononi et al., 2016).
-Neuroscientific research has suggested that self-experience may not be simply a construct of consciousness, but rather something embedded in specific neural activity (Blanke & Metzinger, 2009).
+But with recent advances in neuroscience, this functionalist perspective has encountered challenges, especially regarding the question of whether self-experience might have a genuine neural basis [@Seth2018; @Dehaene2014; @Tononi2016]
+
+Neuroscientific research has suggested that self-experience may not be simply a construct of consciousness, but rather something embedded in specific neural activity [@Blanke2009].
 This development has led scholars to reconsider the relationship between self and consciousness, as well as their potential evolutionary paths.
+
 In response, two main perspectives have emerged: illusionist theory and independence theory.
-Illusion theory maintains that the self is merely a conceptual framework that humans created to understand the world; while it may be supported by certain neural mechanisms, these mechanisms are insufficient to provide a solid, physical basis for the self (Seth, 2021; Wegner & Wheatley, 1999).
-On the other hand, independence theory suggests that the sense of self can operate even without conscious awareness, functioning as a fundamental biological process rather than an extension of consciousness (Deacon & García-Valdecasas, 2023).
+Illusion theory maintains that the self is merely a conceptual framework that humans created to understand the world; while it may be supported by certain neural mechanisms, these mechanisms are insufficient to provide a solid, physical basis for the self [@Seth2021; @Wegner1999].
+On the other hand, independence theory suggests that the sense of self can operate even without conscious awareness, functioning as a fundamental biological process rather than an extension of consciousness [@Deacon2023].
+
 To explore these views, a range of experimental and theoretical studies were conducted.
 Libet (1985)’s readiness potential study stands as a foundational example in support of illusion theory.
-Libet’s work revealed that the brain initiates a readiness potential—a neural precursor to action—before an individual consciously decides to act (Libet, 1985).
+Libet’s work revealed that the brain initiates a readiness potential—a neural precursor to action—before an individual consciously decides to act [@Libet1985].
 This finding opened the door to debates about free will and self-attribution, reinforcing the idea that the self may simply be a retrospective attribution.
-Nevertheless, Libet’s study is still in debate, especially regarding whether neural activity alone represents genuine self-experience and whether unconscious processes of self-attribution might exist (Neafsey, 2021; Moore et al., 2010).
+Nevertheless, Libet’s study is still in debate, especially regarding whether neural activity alone represents genuine self-experience and whether unconscious processes of self-attribution might exist [@Neafsey2021; @Moore2010].
+
 Wegner and Wheatley (1999)’s Illusion of Thought-Action theory further strengthens the illusionist stance.
-They proposed that the feeling of control over one’s actions often comes as a retrospective attribution, largely influenced by external cues and expectations (Wegner & Wheatley, 1999).
+They proposed that the feeling of control over one’s actions often comes as a retrospective attribution, largely influenced by external cues and expectations [@Wegner1999].
+
 In contrast, research supporting independence theory explored the continuity of self-experience across conscious and unconscious states.
 Tsakiris and Haggard (2005)’s rubber hand illusion experiment demonstrated how self-attribution can be both flexible and automatic.
 This effect highlights how self-experience and bodily perception interact, suggesting that self-awareness might not rely entirely on conscious construction but could have a deeper neural basis, potentially independent of conscious oversight.
+
 To further illustrate the underlying assumptions between the Illusion Theory and Independence Theory, think about an experience where you are absent-mindedly cutting vegetables and accidentally cut your finger.
 Seeing the cut, you immediately feel ‘I caused this,’ even though you may not have been consciously aware of when it happened.
 Illusion theory assumes that consciousness precedes the self, hence would interpret this as a post-hoc attribution created by consciousness, while independence theory suggests that, even without being conscious of the entire process, your body’s underlying mechanisms would automatically attribute the action to self.
+
 The implications behind these differing explanations are worth noting.
-If the self is merely a construct of consciousness, then mental health conditions like dissociative identity disorder or post-traumatic stress disorder (PTSD) could be seen as misconstructions by consciousness, where the focus of treatment would rely on building a healthier self-concept to help patients integrate their sense of self (Gallagher, 2000).
-However, if the self can exist at an unconscious level, then it may be that deeper, automatic mechanisms of self-attribution are at work in such disorders (Gallagher, 2000).
-Literature Gap and Research Question While previous research has provided in-depth insights into the relationship between self and consciousness, studies directly investigating whether the sense of self can exist without conscious awareness is lacking.
-One promising effect for investigating this topic is Intentional Binding (IB; Haggard et al., 2002; Ruess et al., 2018), which occurs when people perceive the time interval between their action and its outcome as shorter, reflecting a sense of agency or causation.
+If the self is merely a construct of consciousness, then mental health conditions like dissociative identity disorder or post-traumatic stress disorder (PTSD) could be seen as misconstructions by consciousness, where the focus of treatment would rely on building a healthier self-concept to help patients integrate their sense of self [@Gallagher2000].
+However, if the self can exist at an unconscious level, then it may be that deeper, automatic mechanisms of self-attribution are at work in such disorders [@Gallagher2000].
+
+**Literature Gap and Research Question**
+
+While previous research has provided in-depth insights into the relationship between self and consciousness, studies directly investigating whether the sense of self can exist without conscious awareness is lacking.
+
+One promising effect for investigating this topic is Intentional Binding [@Haggard2002; @Ruess2018], which occurs when people perceive the time interval between their action and its outcome as shorter, reflecting a sense of agency or causation.
 For instance, if a person presses a button and a circle appears after 0.5 seconds, they may feel their action caused the circle to appear instantly, with no time gap.
 When people feel agency, they tend to perceive this interval as shorter.
+
 Utilizing this effect, we aim to investigate whether participants can experience a sense of agency (SoA)—indicated by a perceived shortening of time between action and outcome (intentional binding)—when the outcome of their action is masked from conscious awareness?
 
 # Hypotheses
@@ -206,7 +220,7 @@ kable(table_data, format = "latex", caption = "Table 2. Testing Hypotheses",
 
 ```
 
-# Data Analysis Plan (for hypothesis 2) 
+# Data Analysis Plan (for hypothesis 2)
 
 *Note:* So far we have only collected data from 65 participants.
 Therefore, only these participants' data will be analysed in this report.
@@ -216,7 +230,6 @@ Specifically, we aim to determine if these biases are modulated by unconscious p
 To achieve this, we implement a rigorous screening procedure to exclude trials where participants reported awareness of the operant stimulus.
 
 The data analysis is structured as follows:
-
 
 **Screening Procedure using Fisher's Exact Test:**
 
@@ -314,7 +327,6 @@ str(data_list)
 
 ```
 
-
 ## Step 2: Screening Procedure using Fisher's Exact Test
 
 ### Data Screening: Exclusion Criteria
@@ -358,11 +370,8 @@ print(baseline_unaware)
 
 
 ```
-We can see that for subject 01, there are:
-`r operant_aware` aware in operant-masked condition;
-`r operant_unaware` unaware in operant-masked condition;
-`r baseline_aware` awarenesses in baseline-masked condition;
-`r baseline_unaware` awarenesses in baseline-masked condition.
+
+We can see that for subject 01, there are: `r operant_aware` aware in operant-masked condition; `r operant_unaware` unaware in operant-masked condition; `r baseline_aware` awarenesses in baseline-masked condition; `r baseline_unaware` awarenesses in baseline-masked condition.
 
 Let's then produce a contingency table:
 
@@ -378,6 +387,7 @@ rownames(contingency_table) <- c("Operant-Masked", "Baseline-Masked")
 colnames(contingency_table) <- c("Aware", "Unaware")
 
 ```
+
 Let's conduct Fisher's Exact Test
 
 ```{r fisher sub.01, echo=TRUE}
@@ -385,7 +395,8 @@ fisher_result <- fisher.test(contingency_table, alternative = "greater") #one-ta
 print(fisher_result)
 
 ```
-The results shows that participant 01 has significantly more "aware" in operant-masked condition than in baseline-masked condition, hence this participant should be excluded. 
+
+The results shows that participant 01 has significantly more "aware" in operant-masked condition than in baseline-masked condition, hence this participant should be excluded.
 
 **Let's then create a function to apply Fisher's Exact Test on all participants:**
 
@@ -419,10 +430,10 @@ length(filtered_data_list)
 
 After screening, there are `r length(filtered_data_list)` participants left.
 
-
 ## Step 3 Data Preprocessing and Filtering
 
-Define a function to only inclue real trials and exclude catch and practice trials. Also exclude trials where participants report that they are aware of the blue circle. 
+Define a function to only inclue real trials and exclude catch and practice trials.
+Also exclude trials where participants report that they are aware of the blue circle.
 
 ```{r data-preparation, echo=TRUE}
 
@@ -447,6 +458,7 @@ processed_data_list <- lapply(filtered_data_list, preprocess_data)
 We calculate the **Huber Mean** for estimation bias within each condition, which is a robust measure of central tendency that minimizes the impact of outliers.
 
 ### 4.1 Huber Mean Calculation
+
 ```{r huber mean, echo=TRUE}
 
 #Create a new condition column for every table to benefit later comparasion
@@ -496,6 +508,7 @@ print(huber_results)
 ```
 
 ### 4.2: Paired Differences (Δ_masked) Calculation
+
 ```{r paired differences, echo=TRUE}
 
 calculate_diff <- function(huber_vals) {
@@ -512,6 +525,7 @@ print(delta_masked)
 ```
 
 ### Visualization
+
 ```{r huber mean and paired difference viz, echo=TRUE}
 delta_data <- data.frame(delta_masked = delta_masked)
 
@@ -529,11 +543,9 @@ ggplot(delta_data, aes(y = delta_masked)) +
 
 ```
 
+## Step 5: Paired t-test and Effect Size Calculation (Cohen's d) **\[To be compeleted\]**
 
-## Step 5: Paired t-test and Effect Size Calculation (Cohen's d) **[To be compeleted]**
-
-**Objective:**
-Calculate Paired Differences (Δ_masked):
+**Objective:** Calculate Paired Differences (Δ_masked):
 
 Δ_masked = Operant-Masked Huber Mean - Baseline-Masked Huber Mean
 
@@ -541,8 +553,7 @@ Measures the effect of intentional action on time estimation bias in the Masked 
 
 **Statistical Tests:**
 
-One-tailed Paired t-test:
-Test the hypothesis: Δ_masked > 0 (indicating intentional binding).
+One-tailed Paired t-test: Test the hypothesis: Δ_masked \> 0 (indicating intentional binding).
 
 **Effect Size Calculation:**
 
