@@ -30,9 +30,9 @@ Section: 1
 
 Research project title: Is Conscious Awareness A Prerequisite to Sense of Agency?
 
-Submission date: 02.26.2025
+Submission date: 03.11.2025
 
-Submission number (1-4): 1
+Submission number (1-4): 2
 
 Project GitHub repository URL: [Amyimeng/Awareness_and_Agency_Project](https://github.com/Amyimeng/Awareness_and_Agency_Project)
 
@@ -119,7 +119,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     2.  Outlines the repo structure with file tree or similar
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -305,7 +305,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     -   NOTE: This objective may be met with only numeric or factor data analyses if they are sufficiently complex (at Dr. Dowling's discretion)
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -409,7 +409,7 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 
     5.  Chunks are organized sensibly and appear near the text they support
 
-        -   [ ] Objective attempt
+        -   [x] Objective attempt
         -   [ ] Objective met
         -   Grader comments:
 
@@ -475,7 +475,9 @@ Refer to the website for general tips on meeting these objectives and an FAQ.
 Optionally (for engagement points) write a brief reflection about your work on this project. You can use this space to answer the following questions, but feel free to ignore these questions and write about whatever you think is most important.
 
 -   What was the most challenging aspect of this project?
+    -   Honestly, I am not sure whether I have met all the ggplot requirements, however I do think that my application is appropriate and I do not need many complex features- they would be redundant to my results interpretation.
 -   What was the most rewarding aspect of this project?
+    -   I learned that there are clever ways to organize data, figures and tables. For example, if I was not using R, I would just manually label all my tables and figures. This is both time-consuming and ineffective, as if I change one figure I will need to relabel all of the figure that come after this figure.
 -   What would you do differently if you were to start over?
 -   What did you learn from this project that you will carry forward to future projects?
 -   What are you most proud of in this project?

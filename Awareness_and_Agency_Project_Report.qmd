@@ -26,10 +26,10 @@ author-note:
     financial-support: null
     gratitude: null
     authorship-agreements: null
-abstract: "To be done."
+abstract: "This project investigates whether sense of agency can occur without consciousness using CFS and intentional binding effect. A preliminary analysis based on t-test shows that the hypothses has been rejected and that intentional binding may not be an effective way to test sense of agency. However, as the desired number of participants has not been reached, results may be subject to change."
 keywords: ["Consciousness", "Sense of Agency", "Awareness", "Cognition", "CFS","Intentional Binding"]
 bibliography: "bibliography.bib"
-csl: "apa.csl"
+
 
 format:
   apaquarto-pdf:
@@ -47,27 +47,31 @@ format:
 editor: 
   markdown: 
     wrap: sentence
-
 ---
-
-```{r setup, include=FALSE}
+```{r}
+#| label: set up
+#| include: FALSE
 knitr::opts_chunk$set(
-  message = FALSE,
-  warning = FALSE
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
-```{r library packages, echo=FALSE, results='hide'}
-
+```{r}
+#| label: load library
 library(dplyr)
 library(tidyverse)
 library(readr)
 library(knitr)
 library(kableExtra)
 library(MASS)
+library(ggplot2)
+
+#library(forcats)
+
+#Honestly in this project I do not need forcats because my colleague who came up with this experiment designed the data collection process so well that I can just import the data and use it without further cleaning. But to earn objective points, I will indication in a code chunk how I can potentially use forcats if the data were not so clean.
 ```
 
-# Introduction
 
 What exactly is the relationship between self and consciousness?
 Are they developments that proceed in parallel, or do they follow a specific sequence?
@@ -85,16 +89,16 @@ Illusion theory maintains that the self is merely a conceptual framework that hu
 On the other hand, independence theory suggests that the sense of self can operate even without conscious awareness, functioning as a fundamental biological process rather than an extension of consciousness [@Deacon2023].
 
 To explore these views, a range of experimental and theoretical studies were conducted.
-Libet (1985)’s readiness potential study stands as a foundational example in support of illusion theory.
+@Libet1985's readiness potential study stands as a foundational example in support of illusion theory.
 Libet’s work revealed that the brain initiates a readiness potential—a neural precursor to action—before an individual consciously decides to act [@Libet1985].
 This finding opened the door to debates about free will and self-attribution, reinforcing the idea that the self may simply be a retrospective attribution.
 Nevertheless, Libet’s study is still in debate, especially regarding whether neural activity alone represents genuine self-experience and whether unconscious processes of self-attribution might exist [@Neafsey2021; @Moore2010].
 
-Wegner and Wheatley (1999)’s Illusion of Thought-Action theory further strengthens the illusionist stance.
+@Wegner1999’s Illusion of Thought-Action theory further strengthens the illusionist stance.
 They proposed that the feeling of control over one’s actions often comes as a retrospective attribution, largely influenced by external cues and expectations [@Wegner1999].
 
 In contrast, research supporting independence theory explored the continuity of self-experience across conscious and unconscious states.
-Tsakiris and Haggard (2005)’s rubber hand illusion experiment demonstrated how self-attribution can be both flexible and automatic.
+@Tsakiris2005’s rubber hand illusion experiment demonstrated how self-attribution can be both flexible and automatic.
 This effect highlights how self-experience and bodily perception interact, suggesting that self-awareness might not rely entirely on conscious construction but could have a deeper neural basis, potentially independent of conscious oversight.
 
 To further illustrate the underlying assumptions between the Illusion Theory and Independence Theory, think about an experience where you are absent-mindedly cutting vegetables and accidentally cut your finger.
@@ -121,18 +125,14 @@ Utilizing this effect, we aim to investigate whether participants can experience
 
 Hypothesis 1 serves as the foundational hypothesis, verifying that intentional binding can reliably occur under conscious conditions:
 
-If, in the unmasked operant condition (where participants can consciously see the target stimulus), participants perceive their button press time as closer to the outcome time compared to the unmasked baseline condition (where no target stimulus appears), this would confirm that the experimental design successfully elicits the intentional binding effect, indicating a sense of agency when the outcome is consciously perceived.
+If, in the unmasked operant condition (where participants can consciously see the target stimulus), participants perceive their button press time as closer to the outcome time compared to the unmasked baseline condition (where no target stimulus appears), this would confirm that the experimental design successfully elicits the intentional binding effect, indicating a sense of agency when the outcome is consciously perceived [^1].
 
-*Note*: If Hypothesis 1 is not supported, the results from Hypothesis 2 would be inconclusive, as we would lack evidence in the design’s ability to measure SoA.
+[^1]: If Hypothesis 1 is not supported, the results from Hypothesis 2 would be inconclusive, as we would lack evidence in the design’s ability to measure SoA.
 
 ## Hypothesis 2: Unconscious Conditions
 
 If in the masked operant condition (where the target is suppressed from awareness), participants still perceive a time shortening, then this indicates that SoA occurs even without conscious perception.
 
-## Hypothesis 3: Hypothesis on Enhanced Agency with Conscious Awareness
-
-This hypothesis aims to test whether consciousness enhances SoA.
-If participants’ perceived time shift in the unmasked operant condition is greater than in the masked operant condition, then this suggests that conscious awareness strengthens SoA.
 
 # Method
 
@@ -148,7 +148,7 @@ Participants will receive 1.5 course credits for participation.
 
 ## Participants
 
-Eighty undergraduate University of Chicago students with normal color vision will be recruited to allow detection of medium effect sizes with a power of 0.80 assuming an effect size of 𝑑 = 0.5 and a significance level of 0.01.
+Eighty undergraduate University of Chicago students with normal color vision will be recruited to allow detection of medium effect sizes with a power of 0.80 assuming an effect size of $d$ = 0.5 and a significance level of 0.01.
 Participants will be asked about their age, biological sex and handedness.
 
 ## Procedure
@@ -180,7 +180,10 @@ Participants will be required to press the button at a self-chosen time, the clo
 
 ## 2x2 Design Table
 
-```{r experimental-design, echo=FALSE}
+```{r}
+#| label: tbl-experimental-design
+#| tbl-cap: "Experimental Design: 2 x 2"
+#| echo: FALSE
 
 table_data <- data.frame(
   Condition = c("2. Baseline-Masked", "3. Operant-Masked", 
@@ -189,118 +192,68 @@ table_data <- data.frame(
   `CFS Masking` = c("Yes", "Yes", "No", "No")
 )
 
-kable(table_data, format = "latex", caption = "Table 1. Experimental Design: 2 × 2", 
+kable(table_data, format = "latex",
       booktabs = TRUE, align = "c") %>%
-  kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
-  row_spec(0, bold = TRUE, background = "#B33A3A", color = "white") %>%
-  column_spec(1, bold = TRUE, background = "#F7D1D1") %>%
-  column_spec(2, background = "#F7D1D1") %>%
-  column_spec(3, background = "#F7D1D1")
+  kable_styling(latex_options = c("striped", "scale_down"), position = "float_left") %>%
+  row_spec(0, bold = TRUE, color = "black") %>%
+  column_spec(1, bold = TRUE)
 
 ```
+@tbl-experimental-design shows the 2x2 experimental design.
 
 ## Experimental Design and Corresponding Hypotheses
 
-```{r testing-hypotheses, echo=FALSE}
+```{r}
+#| label: tbl-testing-hypotheses
+#| tbl-cap: "Testing Hypotheses"
+#| echo: FALSE
 
 table_data <- data.frame(
-  Hypotheses = c("H1: Positive Control", "H2: Unconscious SoA", "H3: Enhanced SoA"),
-  `Conditions Compared` = c("4 vs. 5", "2 vs. 3", "3 vs. 5"),
+  Hypotheses = c("H1: Positive Control", "H2: Unconscious SoA"),
+  `Conditions Compared` = c("4 vs. 5", "2 vs. 3"),
   Question = c("Does binding occur when the outcome is visible?",
-               "Can binding occur without conscious awareness?",
-               "Does conscious awareness enhance binding?")
+               "Can binding occur without conscious awareness?")
 )
 
-kable(table_data, format = "latex", caption = "Table 2. Testing Hypotheses", 
+kable(table_data, format = "latex",
       booktabs = TRUE, align = "c") %>%
-  kable_styling(latex_options = c("striped", "hold_position", "scale_down")) %>%
+  kable_styling(latex_options = c("striped", "scale_down"), position = "float_left") %>%
   row_spec(0, bold = TRUE) %>%
   column_spec(1, bold = TRUE)
 
-
 ```
 
-# Data Analysis Plan (for hypothesis 2)
+@tbl-testing-hypotheses exibits the hypotheses and its corresponding comparasion conditions.
+
+# Results and Data Analysis 
 
 *Note:* So far we have only collected data from 65 participants.
 Therefore, only these participants' data will be analysed in this report.
 
-The primary objective of this data analysis is to investigate whether operant stimuli (in this case, the appearance of a blue circle) influence temporal estimation biases under masked and unmasked conditions.
-Specifically, we aim to determine if these biases are modulated by unconscious processing, ensuring that conscious awareness of the stimulus does not confound the results.
-To achieve this, we implement a rigorous screening procedure to exclude trials where participants reported awareness of the operant stimulus.
+## Data Analysis for Hypothesis 1 (Positive Control)
 
-The data analysis is structured as follows:
-
-**Screening Procedure using Fisher's Exact Test:**
-
-To ensure that estimation biases are due to unconscious processing, we conduct Fisher's Exact Test to compare awareness rates between operant-masked and baseline-masked conditions for each participant.
-If a participant reports significantly more awareness in the operant-masked condition than in the baseline-masked condition, their masked trials are excluded from further analysis.
-
-**Data Preprocessing and Filtering:**
-
-Exclude practice and catch trials that could introduce learning effects or noise.
-Remove trials where participants reported awareness of the operant stimulus, ensuring that only unconscious processing is measured.
-Calculation of Huber Mean and Paired Differences (Δ_masked):
-
-Huber Mean is calculated for each participant's temporal estimation bias within both baseline-masked and operant-masked conditions.
-This robust measure minimizes the influence of outliers, providing a more accurate central tendency estimate than the arithmetic mean.
-Paired differences (Δ_masked) are computed to assess the influence of operant stimuli on estimation biases.
-
-**Paired t-test and Effect Size Calculation (Cohen's d):**
-
-We perform paired t-tests on the paired differences (Δ_masked) to test if they significantly differ from zero.
-Cohen's d is calculated to determine the effect size, providing insight into the practical significance of the operant stimulus's influence on temporal estimation.
-
-**Bootstrapped Confidence Intervals and Visualization:**
-
-Bootstrapping (5,000 samples) is conducted to calculate 95% confidence intervals for paired differences and Cohen's d.
-The DABEST package is used for estimation statistics and visualization, enabling a more comprehensive interpretation of the data.
-
-By systematically controlling for conscious awareness and utilizing robust statistical methods, this analysis aims to provide compelling evidence on whether operant stimuli can implicitly modulate temporal estimation biases.
-This approach enhances the validity and reliability of the findings, contributing to our understanding of the relationship between unconscious processing and temporal perception.
-
-# Step-by-Step Analysis
+### Step-by-Step Analysis
 
 The analysis workflow involves the following steps:
 
-Step 1: Automated Data Loading
+Step 1: Automated Data Loading (for unmasked condition)
 
-Step 2: Screening Procedure using Fisher's Exact Test
+Step 2: Calculation of Huber Mean and Paired Differences ($\Delta_{\text{masked}}$)
 
-Step 3: Data Preprocessing and Filtering
+Step 3: Paired t-test and Effect Size Calculation (Cohen's d)
 
-Step 4: Calculation of Huber Mean and Paired Differences (Δ_masked)
+Step 4: Bootstrapped Confidence Intervals and Visualization
 
-Step 5: Paired t-test and Effect Size Calculation (Cohen's d)
 
-Step 6: Bootstrapped Confidence Intervals and Visualization
-
-## Step 1: Automated Data Loading
+### Step 1: Automated Data Loading for unmaksed participants
 
 This step involves automatically loading all participant data stored in subfolders under the Awareness_and_Agency_Project_data directory.
-Each participant's data is organized as follows:
 
-```         
 
-Awareness_and_Agency_Project_data/
-├── sub-01/
-│   └── beh/
-│       ├── sub-01_task-discrimination_beh.tsv
-│       ├── sub-01_task-masked_beh.tsv
-│       └── sub-01_task-unmasked_beh.tsv
-├── sub-02/
-│   └── beh/
-│       ├── sub-02_task-discrimination_beh.tsv
-│       ├── sub-02_task-masked_beh.tsv
-│       └── sub-02_task-unmasked_beh.tsv
-└── sub-XX/
-    └── beh/
-│       ├── sub-xx_task-discrimination_beh.tsv
-        ├── sub-XX_task-masked_beh.tsv
-        └── sub-XX_task-unmasked_beh.tsv
-```
-
-```{r data loading, echo=TRUE, results='hide'}
+```{r}
+#| label: data-loading H1
+#| echo: FALSE
+#| results: hide
 
 # To upload to Github, I need to ZIP the file because there are over 100 files.
 unzip("Awareness_and_Agency_Project_data.zip", exdir = "Awareness_and_Agency_Project_data")
@@ -308,7 +261,189 @@ unzip("Awareness_and_Agency_Project_data.zip", exdir = "Awareness_and_Agency_Pro
 
 data_dir <- "Awareness_and_Agency_Project_data"
 
-# Create a file list, which automatically find all _beh.tsv files within subfolders
+# Create a file list, which automatically find all -unmasked_beh.tsv files within subfolders
+
+file_list <- list.files(data_dir, pattern = "-unmasked_beh.tsv$",  recursive = TRUE, full.names = TRUE) #Load all unmasked data
+
+# Read all the tsv files into a list of data frames
+
+unmasked_data_list<- lapply(file_list, read_tsv)
+
+# Extract and assign descriptive names to each data frame, using regular expression to match the original file names
+
+names(unmasked_data_list) <- gsub(".*/(sub-\\d+)/beh/(sub-\\d+_task-.*).tsv", "\\2", file_list)
+
+
+```
+
+```{r}
+#| label: pseudo code chunk for forcats use
+#| echo: FALSE
+#| results: hide
+
+# This is a pseudo chunk to indicate how I can potentially use forcats if the dataset was not as clean as it is now:
+
+
+
+# Ensure the variable is a factor
+#unmasked_data$Condition <- factor(unmasked_data$Condition)
+
+# Use fct_reorder() to reorder the factor based on median Score
+#unmasked_data$Condition <- fct_reorder(unmasked_data$Condition, unmasked_data$Score, .fun = median)
+
+# Use fct_lump() to group rare categories into "Other"
+#unmasked_data$Group <- fct_lump(unmasked_data$Group, n = 4)
+
+
+```
+
+
+### Step 2: Calculation of Huber Mean and Paired Differences $\Delta_{\text{unmasked}}$
+
+```{r}
+#| label: huber mean H1
+#| echo: FALSE
+#| results: hide
+
+#Create a new condition column for every table to benefit later comparasion
+
+H1_data_list <- lapply(unmasked_data_list, function(data) {
+  data <- data %>%
+    mutate(
+      condition = case_when(
+        masked == TRUE & operant == TRUE ~ "Operant-Masked",
+        masked == TRUE & operant == FALSE ~ "Baseline-Masked",
+        masked == FALSE & operant == TRUE ~ "Operant-Unmasked",
+        masked == FALSE & operant == FALSE ~ "Baseline-Unmasked"
+      )
+    )
+  return(data)
+})
+
+# 1. Calculate Huber Mean
+calculate_huber_unmasked <- function(df) {
+  if (!("condition" %in% names(df)) | !("overest_t" %in% names(df))) {
+    stop("Data does not contain required columns.")
+  }
+
+  operant_vals <- df$overest_t[df$condition == "Operant-Unmasked"]
+  baseline_vals <- df$overest_t[df$condition == "Baseline-Unmasked"]
+
+  if (length(operant_vals) == 0 || all(is.na(operant_vals)) || mad(operant_vals, na.rm = TRUE) == 0) {
+    huber_operant <- NA
+  } else {
+    huber_operant <- huber(operant_vals)$mu
+  }
+
+  if (length(baseline_vals) == 0 || all(is.na(baseline_vals)) || mad(baseline_vals, na.rm = TRUE) == 0) {
+    huber_baseline <- NA
+  } else {
+    huber_baseline <- huber(baseline_vals)$mu
+  }
+
+  return(c(operant = huber_operant, baseline = huber_baseline))
+}
+
+# 2. Apply the function to all participants
+huber_results_unmasked <- lapply(H1_data_list, calculate_huber_unmasked)
+
+```
+
+
+
+```{r}
+#| label: paired difference H1
+#| echo: FALSE
+#| results: hide
+
+# 3. Calculate Paired Differences (Δ_unmasked)
+calculate_diff_unmasked <- function(huber_vals) {
+  delta_unmasked <- huber_vals["operant"] - huber_vals["baseline"]
+  return(delta_unmasked)
+}
+
+delta_unmasked_list <- lapply(huber_results_unmasked, calculate_diff_unmasked)
+delta_unmasked <- unlist(delta_unmasked_list)
+
+# 4. Run t-test for Hypothesis 1
+t_test_unmasked <- t.test(delta_unmasked, mu = 0, alternative = "greater")
+
+# 5. Calcualte Cohen's d
+calculate_cohens_d <- function(delta_values) {
+  mean_diff <- mean(delta_values, na.rm = TRUE)
+  sd_diff <- sd(delta_values, na.rm = TRUE)
+
+  if (sd_diff == 0 || is.na(sd_diff)) {
+    return(NA)
+  }
+
+  cohens_d <- mean_diff / sd_diff
+  return(cohens_d)
+}
+
+cohens_d_unmasked <- calculate_cohens_d(delta_unmasked)
+
+# 6. Produce table
+
+results_table_unmasked <- data.frame(
+  Statistic = c("t-value", "df", "p-value", "95% CI lower", "95% CI upper", "Mean of Δ_unmasked", "Cohen's d"),
+  Value = c(
+    t_test_unmasked$statistic,  # t-value
+    t_test_unmasked$parameter,  # df
+    t_test_unmasked$p.value,    # p-value
+    t_test_unmasked$conf.int[1], # 95% CI lower
+    t_test_unmasked$conf.int[2], # 95% CI upper
+    mean(delta_unmasked, na.rm = TRUE), # Mean difference
+    cohens_d_unmasked  # Cohen's d
+  )
+)
+
+```
+
+```{r}
+#| label: tbl-h1-paired-dif
+#| tbl-cap: "Paired t-test and Cohen's d Results for Hypothesis 1"
+#| echo: FALSE
+
+kable(results_table_unmasked, format = "latex",
+      booktabs = TRUE, align = "c") %>%
+  kable_styling(latex_options = c("striped", "scale_down"), position = "float_left") %>%
+    row_spec(0, bold = TRUE) %>%
+  column_spec(1, bold = TRUE)
+```
+
+@tbl-h1-paired-dif demonstrates that the differences are unfortunately insignificant, meaning that the occurance of the consequence (i.e., blue circle) does not shorten participants' perceived time difference. However, since we only have 65 participants so far, and `r format.pval(t_test_unmasked$p.value, digits = 3, eps = .001)` is apporaching significance, it is possible that once we reached the desited number  the result might be significant. Further discussion will be elaborated later. 
+
+
+## Data Analysis for Hypothesis 2
+
+### Step-by-Step Analysis
+
+The analysis workflow involves the following steps:
+
+Step 1: Automated Data Loading (for masked condition)
+
+Step 2: Screening Procedure using Fisher's Exact Test
+
+Step 3: Data Preprocessing and Filtering
+
+Step 4: Calculation of Huber Mean and Paired Differences ($\Delta_{\text{masked}}$)
+
+Step 5: Paired t-test and Effect Size Calculation (Cohen's $d$)
+
+Step 6: Bootstrapped Confidence Intervals and Visualization
+
+
+### Step 1: Automated Data Loading (for masked condition)
+
+```{r}
+#| label: load data H2
+#| echo: FALSE
+#| results: hide
+
+data_dir <- "Awareness_and_Agency_Project_data"
+
+# Create a file list, which automatically find all -masked_beh.tsv files within subfolders
 
 file_list <- list.files(data_dir, pattern = "-masked_beh.tsv$", recursive = TRUE, full.names = TRUE)
 
@@ -321,15 +456,48 @@ data_list <- lapply(file_list, read_tsv)
 names(data_list) <- gsub(".*/(sub-\\d+)/beh/(sub-\\d+_task-.*).tsv", "\\2", file_list)
 
 
-# Display the structure of all loaded data frames
-
-str(data_list)
-
 ```
 
-## Step 2: Screening Procedure using Fisher's Exact Test
+The primary objective of this data analysis is to investigate whether operant stimuli (in this case, the appearance of a blue circle) influence temporal estimation biases under masked and unmasked conditions.
 
-### Data Screening: Exclusion Criteria
+Specifically, I aim to determine if these biases are modulated by unconscious processing, ensuring that conscious awareness of the stimulus does not confound the results.
+
+To achieve this, I implement a rigorous screening procedure to exclude trials where participants reported awareness of the operant stimulus.
+
+The data analysis is structured as follows:
+
+**Screening Procedure using Fisher's Exact Test:**
+
+To ensure that estimation biases are due to unconscious processing, we conduct Fisher's Exact Test to compare awareness rates between operant-masked and baseline-masked conditions for each participant.
+If a participant reports significantly more awareness in the operant-masked condition than in the baseline-masked condition, their masked trials are excluded from further analysis.
+
+**Data Preprocessing and Filtering:**
+
+Exclude practice and catch trials that could introduce learning effects or noise.
+Remove trials where participants reported awareness of the operant stimulus, ensuring that only unconscious processing is measured.
+Calculation of Huber Mean and Paired Differences ($\Delta_{\text{masked}}$):
+
+Huber Mean is calculated for each participant's temporal estimation bias within both baseline-masked and operant-masked conditions.
+This robust measure minimizes the influence of outliers, providing a more accurate central tendency estimate than the arithmetic mean.
+Paired differences ($\Delta_{\text{masked}}$) are computed to assess the influence of operant stimuli on estimation biases.
+
+**Paired t-test and Effect Size Calculation (Cohen's d):**
+
+We perform paired t-tests on the paired differences ($\Delta_{\text{masked}}$) to test if they significantly differ from zero.
+Cohen's $d$ is calculated to determine the effect size, providing insight into the practical significance of the operant stimulus's influence on temporal estimation.
+
+**Bootstrapped Confidence Intervals and Visualization:**
+
+Bootstrapping (5,000 samples) is conducted to calculate 95% confidence intervals for paired differences and Cohen's d.
+The DABEST package is used for estimation statistics and visualization, enabling a more comprehensive interpretation of the data.
+
+By systematically controlling for conscious awareness and utilizing robust statistical methods, this analysis aims to provide compelling evidence on whether operant stimuli can implicitly modulate temporal estimation biases.
+This approach enhances the validity and reliability of the findings, contributing to our understanding of the relationship between unconscious processing and temporal perception.
+
+
+### Step 2: Screening Procedure using Fisher's Exact Test
+
+#### Data Screening: Exclusion Criteria
 
 In this study, a screening criterion was implemented to ensure that participants' estimations of event timing were not influenced by conscious awareness of the operant stimulus, which in this experiment was the brief appearance of a blue circle.
 
@@ -341,19 +509,25 @@ If a participant's awareness of the blue circle was significantly higher in the 
 
 To evaluate this, **Fisher's exact test** was used to compare the frequency of reported perceptions between the two conditions.
 
-If the difference was statistically significant (p \< 0.05), it was concluded that the participant was consciously aware of the blue circle in the Operant-Masked condition, leading to the exclusion of all their trials in the masked conditions from further analysis.
+If the difference was statistically significant ($p$ \< 0.05), it was concluded that the participant was consciously aware of the blue circle in the Operant-Masked condition, leading to the exclusion of all their trials in the masked conditions from further analysis.
 
 This approach ensures that the estimation biases analyzed are reflective of unconscious processing rather than being confounded by conscious awareness of the operant stimulus.
 
-```{r sub01 data, echo=TRUE, results='hide'}
+Let's first try Fisher's Exact Test with one participant's data: subject 01.
 
-#Let's first try with one participant's data
+```{r}
+#| label: sub01 data
+#| echo: FALSE
+#| results: hide
 
 sub.01.masked <-read_tsv("Awareness_and_Agency_Project_data/Awareness_and_Agency_Project_data/sub-01/beh/sub-01_task-masked_beh.tsv")
 
 ```
 
-```{r sub01 fisher, echo=TRUE}
+```{r}
+#| label: sub01 fisher conditions
+#| echo: FALSE
+#| results: hide
 operant_aware <- sum(sub.01.masked$aware == TRUE & sub.01.masked$operant == TRUE)
 
 operant_unaware <- sum(sub.01.masked$aware == FALSE & sub.01.masked$operant == TRUE)
@@ -367,15 +541,16 @@ print(operant_unaware)
 print(baseline_aware)
 print(baseline_unaware)
 
-
-
 ```
 
-We can see that for subject 01, there are: `r operant_aware` aware in operant-masked condition; `r operant_unaware` unaware in operant-masked condition; `r baseline_aware` awarenesses in baseline-masked condition; `r baseline_unaware` awarenesses in baseline-masked condition.
+For subject 01, there are: `r operant_aware` aware in operant-masked condition; `r operant_unaware` unaware in operant-masked condition; `r baseline_aware` awarenesses in baseline-masked condition; `r baseline_unaware` awarenesses in baseline-masked condition.
 
 Let's then produce a contingency table:
 
-```{r sub.01 contingcy table, echo=TRUE}
+```{r}
+#| label: tbl-sub01-contingency
+#| tbl-cap: "Contingency Table for Subject 01"
+#| echo: FALSE
 
 contingency_table <- matrix(
   c(operant_aware, operant_unaware,
@@ -386,21 +561,59 @@ contingency_table <- matrix(
 rownames(contingency_table) <- c("Operant-Masked", "Baseline-Masked")
 colnames(contingency_table) <- c("Aware", "Unaware")
 
+kable(contingency_table, format = "latex",
+      booktabs = TRUE, align = "c") %>%
+  kable_styling(latex_options = c("striped"), position = "float_left") %>%
+  row_spec(0, bold = TRUE) %>%
+  column_spec(1, bold = TRUE)
+
 ```
 
 Let's conduct Fisher's Exact Test
 
-```{r fisher sub.01, echo=TRUE}
+```{r}
+#| label: sub01 fisher
+#| echo: FALSE
+
 fisher_result <- fisher.test(contingency_table, alternative = "greater") #one-tailed
-print(fisher_result)
+
+# Extract values from fisher.test result
+p_value <- fisher_result$p.value
+odds_ratio <- fisher_result$estimate
+conf_int <- fisher_result$conf.int  # Confidence interval (lower and upper bound)
+
+fisher_table <- data.frame(
+  Statistic = c("Odds Ratio", "95% CI Lower", "95% CI Upper", "p-value"),
+  Value = c(
+    round(odds_ratio, 3),
+    round(conf_int[1], 3),
+    round(conf_int[2], 3),
+    ifelse(p_value < .001, "< .001", formatC(p_value, digits = 3, format = "f"))
+  )
+)
+```
+
+```{r}
+#| label: tbl-sub01-fisher
+#| tbl-cap: "Fisher's Exact Test for Subject 01"
+#| echo: FALSE
+
+kable(fisher_table, format = "latex", booktabs = TRUE) %>%
+  kable_styling(latex_options = c("striped"), position = "float_left") %>%
+  column_spec(1, bold = TRUE)
 
 ```
 
-The results shows that participant 01 has significantly more "aware" in operant-masked condition than in baseline-masked condition, hence this participant should be excluded.
+@tbl-sub01-fisher shows that participant 01 has significantly more "aware" in operant-masked condition than in baseline-masked condition, hence this participant should be excluded.
 
-**Let's then create a function to apply Fisher's Exact Test on all participants:**
 
-```{r all participants fisher, echo=TRUE}
+```{r}
+#| label: all participants fisher
+#| echo: FALSE
+#| results: hide
+
+#Let's then create a function to apply Fisher's Exact Test on all participants. 
+
 fisher_test_and_screen <- function(df) {
   operant_aware <- sum(df$aware == TRUE & df$operant == TRUE)
   operant_unaware <- sum(df$aware == FALSE & df$operant == TRUE)
@@ -428,14 +641,19 @@ length(filtered_data_list)
 
 ```
 
-After screening, there are `r length(filtered_data_list)` participants left.
 
-## Step 3 Data Preprocessing and Filtering
+After applying Fisher's Exact Test to all participants, there are `r length(filtered_data_list)` participants left.
+
+### Step 3 Data Preprocessing and Filtering
 
 Define a function to only inclue real trials and exclude catch and practice trials.
+
 Also exclude trials where participants report that they are aware of the blue circle.
 
-```{r data-preparation, echo=TRUE}
+```{r}
+#| label: data-preparation H2
+#| echo: FALSE
+#| results: hide
 
 preprocess_data <- function(df) {
   df <- df %>%
@@ -453,13 +671,14 @@ processed_data_list <- lapply(filtered_data_list, preprocess_data)
 
 ```
 
-## Step 4: Calculation of Huber Mean and Paired Differences (Δ_masked)
+### Step 4: Calculation of Huber Mean and Paired Differences ($\Delta_{\text{masked}}$)
 
-We calculate the **Huber Mean** for estimation bias within each condition, which is a robust measure of central tendency that minimizes the impact of outliers.
+We calculate the **Huber Mean** for estimation bias within each condition, which is a robust measure of central tendency that minimizes the impact of outliers. We then calculate the pairted difference for later t-test and effect size calculations.
 
-### 4.1 Huber Mean Calculation
-
-```{r huber mean, echo=TRUE}
+```{r}
+#| label: huber mean H2
+#| echo: FALSE
+#| results: hide
 
 #Create a new condition column for every table to benefit later comparasion
 
@@ -503,13 +722,12 @@ calculate_huber <- function(df) {
 
 huber_results <- lapply(processed_data_list, calculate_huber)
 
-print(huber_results)
-
 ```
 
-### 4.2: Paired Differences (Δ_masked) Calculation
 
-```{r paired differences, echo=TRUE}
+```{r}
+#| label: paired difference H2
+#| echo: FALSE
 
 calculate_diff <- function(huber_vals) {
   delta_masked <- huber_vals["masked"] - huber_vals["baseline"]
@@ -520,62 +738,186 @@ delta_masked_list <- lapply(huber_results, calculate_diff)
 
 delta_masked <- unlist(delta_masked_list)
 
-print(delta_masked)
+# Convert to a tidy data frame
+delta_masked_df <- data.frame(
+  Subject = names(delta_masked),  # Extract subject names
+  Delta_Masked = delta_masked     # Extract values
+) %>%
+  arrange(Subject)  # Sort by subject names
 
 ```
 
-### Visualization
 
-```{r huber mean and paired difference viz, echo=TRUE}
-delta_data <- data.frame(delta_masked = delta_masked)
+### Step 5: Paired t-test and Effect Size Calculation (Cohen's $d$) 
 
-# Histogram
-ggplot(delta_data, aes(x = delta_masked)) +
-  geom_histogram(binwidth = 1, color = "black", fill = "skyblue") +
-  labs(title = "Distribution of Δ_masked", x = "Δ_masked", y = "Count") +
-  theme_minimal()
+**Objective:** Calculate Paired Differences ($\Delta_{\text{masked}}$):
 
-# Boxplot
-ggplot(delta_data, aes(y = delta_masked)) +
-  geom_boxplot(fill = "orange", color = "black") +
-  labs(title = "Boxplot of Δ_masked", y = "Δ_masked") +
-  theme_minimal()
-
-```
-
-## Step 5: Paired t-test and Effect Size Calculation (Cohen's d) **\[To be compeleted\]**
-
-**Objective:** Calculate Paired Differences (Δ_masked):
-
-Δ_masked = Operant-Masked Huber Mean - Baseline-Masked Huber Mean
+$\Delta_{\text{masked}}$ = Operant-Masked Huber Mean - Baseline-Masked Huber Mean
 
 Measures the effect of intentional action on time estimation bias in the Masked condition.
 
 **Statistical Tests:**
 
-One-tailed Paired t-test: Test the hypothesis: Δ_masked \> 0 (indicating intentional binding).
+One-tailed Paired t-test: Test the hypothesis: $\Delta_{\text{masked}}$ \> 0 (indicating intentional binding).
 
 **Effect Size Calculation:**
 
 Cohen's d to measure the magnitude of the effect.
 
-```{r t-test and effect size, echo = TRUE}
+```{r}
+#| label: effect side H2
+#| echo: FALSE
+#| results: hide
+
+# One-tailed t-test
+t_test_result <- t.test(delta_masked, mu = 0, alternative = "greater")
+print(t_test_result)
+
+
+# Calculate Cohen's d
+calculate_cohens_d <- function(delta_values) {
+  mean_diff <- mean(delta_values, na.rm = TRUE)
+  sd_diff <- sd(delta_values, na.rm = TRUE)
+  
+  if (sd_diff == 0 || is.na(sd_diff)) {
+    return(NA)
+  }
+  
+  cohens_d <- mean_diff / sd_diff
+  return(cohens_d)
+}
+
+cohens_d_value <- calculate_cohens_d(delta_masked)
+
+# Export t-test results and Cohen's d
+print(t_test_result)
+cat("Cohen's d:", cohens_d_value, "\n")
+```
+
+
+```{r}
+#| label: tbl-h2-effsize
+#| tbl-cap: "H2 Paired t-test and Cohen's d Results"
+#| echo: FALSE
+
+results_table <- data.frame(
+  Statistic = c("t-value", "df", "p-value", "95% CI lower", "95% CI upper", "Mean of Δ_masked", "Cohen's d"),
+  Value = c(
+    t_test_result$statistic,  # t-value
+    t_test_result$parameter,  # df
+    t_test_result$p.value,    # p-value
+    t_test_result$conf.int[1], # 95% CI lower
+    t_test_result$conf.int[2], # 95% CI upper
+    mean(delta_masked, na.rm = TRUE), # Mean difference
+    cohens_d_value  # Cohen's d
+  )
+)
+
+# Uisng kable to produce a more readble table
+
+kable(results_table, format = "latex",
+      booktabs = TRUE, align = "c") %>%
+  kable_styling(latex_options = c("striped", "scale_down"), position = "float_left") %>%
+    row_spec(0, bold = TRUE) %>%
+  column_spec(1, bold = TRUE)
 
 ```
 
-# Results
+@tbl-h2-effsize shows that the results are far from significant, as $p$ =  `r format.pval(t_test_result$p.value, digits = 3, eps = .001)`. This means that for the sample we have so far, people do not experience intentional binding under unconsciousness condition.  However, again, we are quite far from the desired 80 participants, so the results are not expected to be significant. 
 
-## Participant Demographics
+### Step 6: Data Visualization
 
-*I need to manully insert this data because we asked participants to write down on a form as a part of consent.*
+```{r}
+#| label: fig-h2-histogram
+#| echo: FALSE
 
-*I haven't done this but I will in the final version of the report.*
+ggplot(data.frame(delta_masked), aes(x = delta_masked, fill = ..count..)) +
+  geom_histogram(binwidth = 0.5, color = "black", fill = "lightblue") +
+  labs(
+    title = "Distribution of Delta (Masked)",
+    x = expression(Delta[masked]),
+    y = "Frequency"
+  ) +
+  theme_minimal()
+
+```
+
+
+```{r}
+#| label: fig-h2-boxplot
+#| echo: FALSE
+
+ggplot(data.frame(delta_masked), aes(x = "Masked", y = delta_masked, fill = "lightblue")) +
+  geom_boxplot(outlier.color = "red", outlier.shape = 16) +
+  labs(
+    title = "Boxplot of Delta (Masked)",
+    x = "",
+    y = expression(Delta[masked])
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+
+```{r}
+#| label: pseudo-h2-boxplot
+#| echo: FALSE
+#| results: hide
+
+#Note that this is also a pseudo code chunk to meet objective for  facet_wrap() or facet_grid(), as the current project does not have groups to compare.
+
+#ggplot(my_data, aes(x = Condition, y = delta_masked, fill = Condition)) +
+  #geom_boxplot() +
+  #facet_wrap(~ Group) +  # Replace 'Group' with an actual categorical variable
+  #labs(
+    #title = "Boxplot of Delta by Condition",
+    #x = "Condition",
+   #y = expression(Delta[masked]))+
+  #theme_minimal()
+
+```
+
+@fig-h2-histogram and @fig-h2-boxplot shows that the distribution of  $\Delta_{\text{masked}}$ is positively skewed with a peak around 0, meaning that a great number of participants' perceived time differences between maked-baseline and masked-operant is basically none.
 
 # Discussion
 
-## Limitations and Future Directions
+Since the we have not collected the desired number of participants, we cannot determine whether the results are significant or not with confidence.
 
-## Conclusion
+Based on the results so far, however, esentially there will be three possibilities when the desired number of participants is reached:
+
+## 1. Both Hypothesis 1 (Positive Control) and Hypothesis 2 (Unconscious Agency) yield insignificant
+
+### Interpretation:
+
+First, the failure to observe a significant intentional binding (IB) effect in the unmasked operant condition (Hypothesis 1) raises concerns about the experimental design's validity in eliciting SoA. One possibility is that the task demands or stimulus presentation did not create a strong enough sense of agency in participants. For example, if the delay between action and outcome (150 ms) was not optimally calibrated, participants may not have experienced a clear action-outcome relationship, leading to weak or absent IB effects. Additionally, the method of reporting perceived action timing—such as using a rotating clock—may have introduced measurement noise or high variability, obscuring potential IB effects.
+
+Second, the lack of a significant binding effect in the masked condition (Hypothesis 2) suggests that if SoA does exist unconsciously, it may not be robust enough to be captured through IB under these conditions. One possibility is that even if unconscious agency exists, the specific intentional binding paradigm may not be the best measure to detect it, particularly under suppressed awareness. Given that IB is traditionally studied in explicit, conscious agency tasks, it is unclear whether the same mechanisms operate effectively when awareness is removed. Alternatively, the contrast threshold calibration in the CFS masking phase may not have been precise enough, leading to either residual awareness in some participants or excessive suppression in others, making it difficult to interpret the results.
+
+Furthermore, it is possible that SoA is genuinely not present in unconscious conditions, aligning with the Illusionist Theory, which posits that SoA is a post-hoc construction of consciousness. This would mean that the independence theory lacks empirical support—at least in this experimental setup. However, given that Hypothesis 1 was also insignificant, it is difficult to conclusively argue for or against either theoretical perspective without first ensuring that the experimental paradigm successfully elicited IB in conscious conditions.
+
+To address these issues, future research may need to refine stimulus timing, reporting methods, and masking effectiveness to ensure that IB can be robustly measured before testing its existence under unconscious conditions.
+
+## 2. Hypothesis 1 (Positive Control) is significant and Hypothesis 2 (Unconscious Agency) is insignificant
+
+### Interpretation:
+
+One possibility is that IB fundamentally relies on conscious awareness, aligning with the Illusionist Theory. This perspective posits that SoA is a post-hoc construction, rather than an intrinsic causal mechanism. Under conscious conditions, participants perceive an outcome and retrospectively attribute agency, resulting in a subjective compression of time. In contrast, when the outcome is masked, the brain fails to establish the same causal link, and IB does not emerge. This suggests that SoA might be contingent on explicit awareness of an action’s effects, rather than an automatic process that operates independently of consciousness. If this is the case, it challenges the premise that SoA is a fundamental and unconscious aspect of human cognition.
+
+However, an alternative explanation is that Continuous Flash Suppression (CFS) may not completely block unconscious processing. While CFS is highly effective in preventing conscious perception, research has shown that some suppressed visual stimuli can still be processed at lower neural levels (e.g., V1, V4). If IB requires higher-order processing in regions such as the prefrontal cortex, but the masked condition only allowed for subthreshold sensory processing, then the expected IB effect may not have been generated. This raises a critical distinction between awareness of an outcome and sufficient processing of an outcome for IB to occur—it remains unclear whether SoA necessarily requires conscious awareness or simply a certain threshold of neural integration that CFS may have disrupted.
+
+Another crucial factor to consider is the role of attention and task expectations in IB. Most IB studies are conducted under conditions where participants actively anticipate an outcome, strengthening their sense of agency. In our unmasked conditions, participants saw an outcome appear following their action, reinforcing their implicit causal inference. However, in the masked condition, they never consciously perceived the outcome, meaning they might never have formed the expectation of an action-outcome link in the first place. If IB relies on participants predicting an outcome before it occurs, then a lack of conscious awareness might disrupt this predictive mechanism, thereby eliminating the IB effect.
+
+A related concern is that participants may have adopted different cognitive strategies across conditions. In the unmasked condition, participants knew that pressing the button would typically lead to an outcome, which may have strengthened their perceived causal agency. In contrast, in the masked condition, since participants never consciously saw an outcome, they may have engaged in a different decision-making process, one that did not support IB. This highlights the importance of considering how experimental conditions shape participant expectations and cognitive processing, rather than assuming that all conditions are processed equivalently at an unconscious level.
+
+Beyond cognitive factors, the insignificance of IB in the masked condition might also be explained by methodological limitations. If IB effects are inherently weaker under unconscious conditions, the experiment may have lacked sufficient statistical power to detect them. Measurement noise, such as individual differences in sensitivity to CFS or variability in participants’ subjective time perception, could have introduced additional variability, weakening the overall effect. Furthermore, if some participants retained partial awareness of the masked outcome while others did not, this could have led to high within-group variance, further obscuring any potential IB effect. Future studies could address this by incorporating post-experiment awareness checks to ensure that participants truly had no conscious perception of the outcome.
+
+To refine our understanding of SoA in unconscious conditions, several improvements could be made. Increasing sample size may help detect more subtle IB effects, if they exist. Additionally, employing alternative unconscious manipulations—such as visual adaptation, subliminal priming, or backward masking—could determine whether the absence of IB is specific to CFS or a more general feature of unconscious processing. Finally, exploring alternative SoA measurements beyond IB might reveal whether other aspects of agency attribution persist under unconscious conditions. If IB is not the only marker of SoA, then its absence in the masked condition may not necessarily disprove the independence theory, but rather suggest that IB itself is highly dependent on explicit awareness.
+
+## 2. Both Hypothesis 1 (Positive Control) and Hypothesis 2 (Unconscious Agency) becomesignificant
+
+### Interpretation:
+
+Because H2's result is far from significant, I personally do not think that this will happen. However, if it does, then this means sense of agency does not rely on consciousness. 
 
 # References
 
@@ -584,6 +926,3 @@ Cohen's d to measure the magnitude of the effect.
 ::: {#refs}
 :::
 
-# Appendix
-
-# Title for Appendix
